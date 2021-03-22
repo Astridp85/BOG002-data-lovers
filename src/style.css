@@ -13,12 +13,15 @@ body {
     width: 100%;
 }
 
+.contenedor {
+    flex-wrap: wrap;
+}
+
 /* * ===== HEADER CONTENEDOR NAVEGACION ====== */
 
 .contenedorNavegacion {
     display: flex;
     width: 100%;
-    align-items: center;
     top: 0;
 	bottom: 0;
     background: #A4D53E;
@@ -27,31 +30,28 @@ body {
 }
 
 .contenedorNavegacion nav{
-	margin: auto;
-	display: inline-block;
-	justify-content:end;
+    margin: auto;
 }
 
 .contenedorNavegacion a {
     text-decoration: none;
-    display: inline-block;
     color: black;
     margin: 0 30px;
     font-size: 20px;
-    padding-right: 50px; 
-    padding-left: 0;
+    padding: 0px 10px;
     transition: .3s ease-out all;
-
+    display: inline-block;
 }
 
 .contenedorNavegacion a:hover {
-	background: #1D2F3D;
+	background: #024115;
 	color: #fff;
-	text-decoration: none;
+    padding: 13.5px;
 }
 
 .contenedorNavegacion .imagenLogo{
     width: 100px;
+    padding: 0px;
 }
 
 /* * ===== MAIN CONTENEDOR IMAGEN ====== */
@@ -166,7 +166,7 @@ font-size: 30px;
     padding-bottom: 60px;
     line-height: 30px;
     word-spacing: 3pt;
-    display: inline-block;
+    min-height: 200px;
    
 }
 
