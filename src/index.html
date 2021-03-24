@@ -5,170 +5,162 @@
     <title>Olympics Data</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <div id="contenedor" class="contenedor">
-       <header>
-         <div class="contenedorNavegacion">
-               <span><a href="index.html"><img src="imagenes/LogoTipo.png" alt="" class="imagenLogo"></a></span>  
-               <nav>  
-               <a href="#entrar">Entrar</a>
-               <a href="#suscribirse">Suscribirse</a>
-              </nav>
-         </div>
+       
+      <header>
+            <div class="contenedorNavegacion">
+               <a href="index.html"><img src="imagenes/LogoTipo.png" alt="" class="imagenLogo"></a>
+            </div>
+            <nav class="opcionesMenu" id="opcionesMenu"> 
+                <a href="#entrar">Entrar</a>
+                <a href="#suscribirse">Suscribirse</a>
+            </nav>
+           <div id="menuToggle" class="menuToggle" style="cursor:pointer">
+              <div class="inicio"></div>
+           </div> 
        </header>
        <main>
-         <section id="contenedorImagen" class="contenedorImagen">
-            <a href=""><img src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg):focal(2377x458:2379x456)/origin-imgresizer.eurosport.com/2016/03/30/1826061-38518451-2560-1440.jpg" alt="imagenPortada" class="imagenPortada"></a>
-             <div class="mensajePortada">
-                 <h1>Bienvenidos a Olimpics Data</h1> <br>
-                <p>Aqui podrán conocer todas las estadísticas sobre los Juegos Olímpicos de Rio de Janeiro 2016</p>
-             </div>   
-         </section>
-         <section id="navegacionOpciones" class="navegacionOpciones">
-            <div class="contenedorOpciones">
-              <div class="imagen1">
-                 <img src="https://i1.wp.com/www.sopitas.com/wp-content/uploads/2016/08/bolt-competencia.jpg" alt="conoceDeLosAtletas"><br>
-                 <button id="btn1" class="btn1">Conoce más de los atletas</button>
-               </div>
-            </div>
-             <div class="contenedorOpciones">
-               <div class="imagen2">
-                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRoEnsd9Zy4qretIrvUBKA3h09IKwQJK320Q&usqp=CAU" alt="datosCuriosos"><br>
-                 <button id="btn2" class="btn2">Datos Curiosos</button>
-                </div>
-            </div>
-            <div class="contenedorOpciones">
-              <div class="imagen3">
-                 <img src="https://img.maspormas.com/2016/08/olimpiadas.gif" alt="conocePorDisciplina"><br>
-                 <button id="btn3" class="btn3">Conoce más por disciplina</button>
+        <section id="contenedorImagen" class="contenedorImagen">
+           <img src="imagenes/imagen1.jpg" alt="imagenPortada" class="imagenPortada">
+           <div class="mensajePortada">
+               <h1>Bienvenidos a <br> Olimpics Data</h1> <br>
+              <p>Aqui podrán conocer todas las estadísticas sobre los Juegos Olímpicos de Rio de Janeiro 2016</p>
+           </div>   
+        </section>
+        <section id="navegacionOpciones" class="navegacionOpciones">
+          <div class="contenedorOpciones">
+            <div class="imagen1">
+               <img src="https://i1.wp.com/www.sopitas.com/wp-content/uploads/2016/08/bolt-competencia.jpg" alt="conoceDeLosAtletas"><br>
+               <button id="btn1" class="btn1">Conoce más de los atletas</button>
+             </div>
+          </div>
+          <div class="gif">
+            <iframe src="https://giphy.com/embed/yvdfXBh9vhzPFQFC0D"></iframe>
+          </div>
+           <div class="contenedorOpciones">
+             <div class="imagen2">
+               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRoEnsd9Zy4qretIrvUBKA3h09IKwQJK320Q&usqp=CAU" alt="datosCuriosos"><br>
+               <button id="btn2" class="btn2">Datos Curiosos</button>
               </div>
-            </div>
-            <div class="contenedorOpciones">
-              <div class="imagen4">
-                 <img src="https://c0.klipartz.com/pngpicture/75/26/sticker-png-olympic-games-2024-summer-olympics-2022-winter-olympics-2016-summer-olympics-2028-summer-olympics-mascote-2018-game-ring-text-sport-logo.png" alt="conocePorContinente"><br>
-                 <button id="btn4" class="btn4">Conoce más por continente</button>
-              </div>
-            </div>
-         </section>
-         <section id="historia">
-            <div class="historia">
-               <h1>Hagamos Historia</h1>
-               <p>
-                Brasil en los Juegos Olímpicos estuvo representado por el Comité Olímpico Brasileño, creado en 1914 y reconocido por el Comité Olímpico Internacional en 1935. <br>
-                Brasil ha participado en  <span>22 ediciones de los Juegos Olímpicos de Verano </span> , la primera presencia de la delegación brasileña en estos Juegos tuvo lugar en Amberes 1920. <br>
-                El país ha obtenido un total de <span>129 medallas en las ediciones de verano: 30 de oro, 36 de plata y 63 de bronce. </span><br>
-                En los Juegos Olímpicos de Invierno Brasil ha participado en 8 ediciones, siendo Albertville 1992 la primera aparición de la delegación brasileña en estos juegos. El país no ha conseguido ninguna medalla en las ediciones de invierno.​<br>
-                Este país fue anfitrión de los Juegos Olímpicos de Verano en una ocasión: Río de Janeiro 2016.
-                </p>
-            </div>
-         </section>
-         <section id="imgPopulares" class="imgPopulares">
-               <h3>Algunas imagenes populares </h3><br>
-            <div class="contenedorImagenes">
-              <ul class="slider">
-                <li id="slide1">
-                  <img src="imagenes/imag1.jpg" alt="" class="carruselImagen">
-                </li>
-                <li id="slide2">
-                  <img src="imagenes/imag2.jpg" alt="" class="carruselImagen">
-                </li>
-                <li id="slide3">
-                  <img src="imagenes/imag3.jpg" alt="" class="carruselImagen">
-                </li>
-                <li id="slide4">
-                  <img src="imagenes/imag4.jpg" alt="" class="carruselImagen">
-                </li>
-              </ul>
-              <ul class="menu">
-                <li>
-                  <a href="#slide1">1</a>
-                </li>
-                <li>
-                  <a href="#slide2">2</a>
-                </li>
-                <li>
-                  <a href="#slide3">3</a>
-                </li>
-                <li>
-                  <a href="#slide4">4</a>
-                </li>
-              </ul>
-            </div>
-            </div>
-         </section>
-       </main>
+          </div>
+       </section>
+       <section id="historia" class="historia">
+           <h1>Hagamos Historia</h1>
+           <p>
+            Brasil en los Juegos Olímpicos estuvo representado por el Comité Olímpico Brasileño, creado en 1914 y reconocido por el Comité Olímpico Internacional en 1935. <br>
+            Brasil ha participado en  <span>22 ediciones de los Juegos Olímpicos de Verano </span> , la primera presencia de la delegación brasileña en estos Juegos tuvo lugar en Amberes 1920. <br>
+            El país ha obtenido un total de <span>129 medallas en las ediciones de verano: 30 de oro, 36 de plata y 63 de bronce. </span><br>
+            En los Juegos Olímpicos de Invierno Brasil ha participado en 8 ediciones, siendo Albertville 1992 la primera aparición de la delegación brasileña en estos juegos. El país no ha conseguido ninguna medalla en las ediciones de invierno.​<br>
+            Este país fue anfitrión de los Juegos Olímpicos de Verano en una ocasión: Río de Janeiro 2016.
+            </p>
+     </section>
+     
+     <section id="imgPopulares" class="imgPopulares">
+      <h3>Algunas imagenes populares </h3><br>
+   <div class="contenedorImagenes">
+     <ul class="slider">
+       <li id="slide1">
+         <img src="imagenes/imag1.jpg" alt="" class="carruselImagen">
+       </li>
+       <li id="slide2">
+         <img src="imagenes/imag2.jpg" alt="" class="carruselImagen">
+       </li>
+       <li id="slide3">
+         <img src="imagenes/imag3.jpg" alt="" class="carruselImagen">
+       </li>
+       <li id="slide4">
+         <img src="imagenes/imag4.jpg" alt="" class="carruselImagen">
+       </li>
+     </ul>
+     <ul class="menu">
+       <li>
+         <a href="#slide1">1</a>
+       </li>
+       <li>
+         <a href="#slide2">2</a>
+       </li>
+       <li>
+         <a href="#slide3">3</a>
+       </li>
+       <li>
+         <a href="#slide4">4</a>
+       </li>
+     </ul>
+   </div>
+   </div>
+</section>
+</main>
 <footer> 
   <div class="containerFullFooter">
-  <div class='container__body'>
+    <div class='container__body'>
     <div class="colum1">
-      <h1>Más información de las estadísticas</h1> <br>
-      <p>Tanto nosotros como nuestros asociados tratamos los datos para proporcionar:
-        Almacenar o acceder a información en un dispositivo. Crear un perfil para la personalización de contenidos.
-        Desarrollar y mejorar productos. Anuncios personalizados y medición de anuncios. Presentación de contenido
-        personalizado, medición del contenido e información sobre el público.</p>
+    <h1>Más información de las estadísticas</h1> <br>
+    <p>Tanto nosotros como nuestros asociados tratamos los datos para proporcionar:
+    Almacenar o acceder a información en un dispositivo. Crear un perfil para la personalización de contenidos.
+    Desarrollar y mejorar productos. Anuncios personalizados y medición de anuncios. Presentación de contenido
+    personalizado, medición del contenido e información sobre el público.</p>
     </div>
     <div class="colum2">
-      <h1>Redes Sociales</h1>
-
-      <div class="fila">
-        <i class="fab fa-facebook-square"></i>
-        <label>Síguenos en Facebook</label>
-      </div>
-      <div class="fila">
-        <i class="fab fa-twitter-square"></i>
-        <label>Síguenos en Twitter</label>
-      </div>
-      <div class="fila">
-        <i class="fab fa-instagram"></i>
-        <label>Síguenos en Instagram</label>
-      </div>
-      <div class="fila">
-        <i class="fab fa-google-plus"></i>
-        <label>Síguenos en Google Plus</label>
-      </div>
-      <div class="fila">
-        <i class="fab fa-pinterest"></i>
-        <label>Síguenos en Pinteres</label>
-      </div>
+    <h1>Redes Sociales</h1>
+    
+    <div class="fila">
+    <i class="fab fa-facebook-square"></i>
+    <label>Síguenos en Facebook</label>
+    </div>
+    <div class="fila">
+    <i class="fab fa-twitter-square"></i>
+    <label>Síguenos en Twitter</label>
+    </div>
+    <div class="fila">
+    <i class="fab fa-instagram"></i>
+    <label>Síguenos en Instagram</label>
+    </div>
+    <div class="fila">
+    <i class="fab fa-google-plus"></i>
+    <label>Síguenos en Google Plus</label>
+    </div>
+    <div class="fila">
+    <i class="fab fa-pinterest"></i>
+    <label>Síguenos en Pinteres</label>
+    </div>
     </div>
     <div class="colum3">
-      <h1>Información contactos</h1>
-      <div class="fila2">
-        <i class="fas fa-home"></i>
-        <label>Av.57 calle La Romana. San Cristóbal #25</label>
-      </div>
-      <div class="fila2">
-        <i class="fas fa-mobile-alt"></i>
-        <label>+57 589 55 25 1</label>
-      </div>
-      <div class="fila2">
-        <i class="far fa-envelope"></i>
-        <label>estadísticas@Olympicsdata.com</label>
-      </div>
+    <h1>Información contactos</h1>
+    <div class="fila2">
+    <i class="fas fa-home"></i>
+    <label>Av.57 calle La Romana. San Cristóbal #25</label>
     </div>
-  </div>
-</div>
-<div class="container__footer">
-  <div class="footer1">
-  <div class="copyrigt">
+    <div class="fila2">
+    <i class="fas fa-mobile-alt"></i>
+    <label>+57 589 55 25 1</label>
+    </div>
+    <div class="fila2">
+    <i class="far fa-envelope"></i>
+    <label>estadísticas@Olympicsdata.com</label>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="container__footer">
+    <div class="footer1">
+    <div class="copyrigt">
     <i class="far fa-copyright"></i>
     <a href="">Todos los derechos Reservados</a>
-  </div>
+    </div>
     <div class="informacion">
     <a href="">Información de compañía | </a>
     <a href="">Privacidad y Política |</a>
     <a href="">Términos y Condiciones</a>
-  </div>
-</div>
-</div>
-</footer>
-
     </div>
-         
-      </div>
-     </main>
-    <script src="main.js" type="module"></script>
+    </div>
+    </div>
+    </footer>
+    </div>
+    </div>
+       </main>
+       <script src="main.js" type="module"></script>
   </body>
 </html>
