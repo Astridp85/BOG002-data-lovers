@@ -19,6 +19,23 @@ function mostrar() {
     let menuOpen = document.getElementById('menuToggle');
     menuOpen.classList.toggle('menuToggleOpen');    
 }
+
+// Popup
+let abrirPopup = document.getElementById ("suscribir"),
+    overLay = document.getElementById ("overLay"),
+    popUp = document.getElementById ("popUp"),
+    btnCerrar = document.getElementById ("popUp");
+
+    abrirPopup.addEventListener('click', function(){
+        overLay.classList.add('active');
+        popUp.classList.add('active');
+       
+    });
+    btnCerrar.addEventListener('click', function(e){
+        e.preventDefault();
+        overLay.classList.remove('active');
+        popUp.classList.remove('active');
+    });
   
 
     
