@@ -4,9 +4,10 @@ let atletas = data.athletes;
 let nombresContenido = ""
 
 for (let i=0; i<atletas.length; i++){
-let nombreAtleta = atletas[i].name;
+let nombreAtleta = atletas[i].sport;
 nombresContenido = nombresContenido + nombreAtleta
 }
+console.log (nombresContenido)
 
 
 // evento menu responsive 
@@ -17,8 +18,29 @@ function mostrar() {
     abrirNavegacion.classList.toggle("opcionesMenuOpen")
 
     let menuOpen = document.getElementById('menuToggle');
-    menuOpen.classList.toggle('menuToggleOpen');    
+    menuOpen.classList.toggle('menuToggleOpen'); 
 }
-  
 
-    
+// Desaparece y aparece la siguiente pagina 
+
+const btn1= document.getElementById("btn1")
+btn1.addEventListener("click", cambioDePagina);
+function cambioDePagina() {
+    ocultarMostrar("paginaConoceMasAtletas","paginaPrincipal")
+}
+
+function ocultarMostrar(pantallaEncendida, pantallaApagada) {
+    document.getElementById(pantallaApagada).style.display = "none";
+    document.getElementById(pantallaEncendida).style.display = "inline";
+}
+
+
+
+// agregamos evento a suscribirse
+
+// let botonEntrar = document.getElementById("entrar");
+// botonEntrar.addEventListener ("click", mostrarPopUp)
+// function mostrarPopUp() {
+//     let cubrir = document.getElementById("cubrir")
+//     cubrir.classList.remove("active")
+// }
