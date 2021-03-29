@@ -2,12 +2,14 @@ import data from './data/athletes/athletes.js';
 
 // let atletas = data.athletes;
 // let nombresContenido = ""
+// let atletasArray = []
 
 // for (let i=0; i<atletas.length; i++){
-// let nombreAtleta = atletas[i].sport;
-// nombresContenido = nombresContenido + nombreAtleta
+// let nombreAtleta = atletas[i].name;
+// nombresContenido.push() nombresContenido + nombreAtleta
 // }
-// console.log (nombresContenido)
+// console.log (nombresContenido);
+// console.log (typeof nombresContenido)
 
 
 // evento menu responsive 
@@ -69,12 +71,3 @@ function ocultarMostrar(pantallaEncendida, pantallaApagada) {
 }
 
 // informacion atletas - 
-
-let atletasBuscar = data.athletes;
-let nombresContenido = []
-for (let i=0; i<atletasBuscar.length; i++){
-let nombreAtleta = atletasBuscar[i].name;
-nombresContenido = nombresContenido + nombreAtleta;
-}
-let nombresString = nombresContenido.s;
-console.log(nombresString[0])
