@@ -651,17 +651,17 @@ footer{
     width: 100%;
     /* background: #A4D53E; */
     color: #141414;
-    background: #ADD100;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #7B920A, #ADD100);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #7B920A, #ADD100); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #22c1c3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdbb2d, #22c1c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
     
 }
 footer .containerFullFooter{
     width: 100%;
     max-width: 72em;
     margin: auto;
-    padding: 40px;
+    padding: 1em;
   }
   
 .container__body {
@@ -671,7 +671,7 @@ footer .containerFullFooter{
 
 }
 .colum1 {
-    max-width: 400px;
+    max-width: 25em;
 }
 .colum1 h1{
     font-size: 1.4em;
@@ -679,38 +679,35 @@ footer .containerFullFooter{
 .colum1 p{
     font-size: 1em;
     color: #141414;
-    margin-top: 20px;
+    margin-top: 1em;
 }
 .colum2 {
-    max-width: 400px;
-   
+    max-width: 25em;
+    text-align: center;
 }
 .colum2 h1 {
     font-size: 1.4em;
 }
 .fila{
-    margin-top: 20px;
+    margin-top: 1em;
     display: flex;
 }
 .fila i{
-    width: 36px;
-    height: 36px;
+    width: 2.3em;
+    height: 2em;
+    font-size: 1.3em;
 }
 
-.fila label{
-    margin-top: 10px;
-    margin-left: 20px;
-    color: #141414;
-}
 .colum3{
-    max-width: 400px;
+    max-width: 25em;
    
 }
 .colum3 h1{
     font-size: 1.4em;
+    padding-bottom: 0.5em;
+    text-align: center;
 }
 .fila2{
-margin-top: 20px;
 display: block;
 }
 .fila2 i{
@@ -718,13 +715,14 @@ display: block;
     height: 36px;
 }
 .fila2 label{
-    margin-top: 10px;
+    margin-top: 1em;
     margin-left: 20px;
     max-width: 140px;
 }
 .container__footer{
     width: 100%;
-    background:#101010;
+    border: black solid;
+    background: black;
 }
 .footer1 {
    
