@@ -661,7 +661,7 @@ footer .containerFullFooter{
     width: 100%;
     max-width: 72em;
     margin: auto;
-    padding: 40px;
+    padding: 1em;
   }
   
 .container__body {
@@ -671,7 +671,7 @@ footer .containerFullFooter{
 
 }
 .colum1 {
-    max-width: 400px;
+    max-width: 25em;
 }
 .colum1 h1{
     font-size: 1.4em;
@@ -679,17 +679,17 @@ footer .containerFullFooter{
 .colum1 p{
     font-size: 1em;
     color: #141414;
-    margin-top: 20px;
+    margin-top: 1em;
 }
 .colum2 {
-    max-width: 400px;
+    max-width: 25em;
    
 }
 .colum2 h1 {
     font-size: 1.4em;
 }
 .fila{
-    margin-top: 20px;
+    margin-top: 1em;
     display: flex;
 }
 .fila i{
@@ -698,12 +698,12 @@ footer .containerFullFooter{
 }
 
 .fila label{
-    margin-top: 10px;
+    margin-top: 0.1em;
     margin-left: 20px;
     color: #141414;
 }
 .colum3{
-    max-width: 400px;
+    max-width: 25em;
    
 }
 .colum3 h1{
@@ -718,7 +718,7 @@ display: block;
     height: 36px;
 }
 .fila2 label{
-    margin-top: 10px;
+    margin-top: 1em;
     margin-left: 20px;
     max-width: 140px;
 }

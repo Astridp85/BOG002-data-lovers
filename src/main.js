@@ -1,13 +1,13 @@
 import data from './data/athletes/athletes.js';
 
-let atletas = data.athletes;
-let nombresContenido = ""
+// let atletas = data.athletes;
+// let nombresContenido = ""
 
-for (let i=0; i<atletas.length; i++){
-let nombreAtleta = atletas[i].sport;
-nombresContenido = nombresContenido + nombreAtleta
-}
-console.log (nombresContenido)
+// for (let i=0; i<atletas.length; i++){
+// let nombreAtleta = atletas[i].sport;
+// nombresContenido = nombresContenido + nombreAtleta
+// }
+// console.log (nombresContenido)
 
 
 // evento menu responsive 
@@ -68,13 +68,13 @@ function ocultarMostrar(pantallaEncendida, pantallaApagada) {
     document.getElementById(pantallaEncendida).style.display = "inline";
 }
 
+// informacion atletas - 
 
-
-// agregamos evento a suscribirse
-
-// let botonEntrar = document.getElementById("entrar");
-// botonEntrar.addEventListener ("click", mostrarPopUp)
-// function mostrarPopUp() {
-//     let cubrir = document.getElementById("cubrir")
-//     cubrir.classList.remove("active")
-// }
+let atletasBuscar = data.athletes;
+let nombresContenido = []
+for (let i=0; i<atletasBuscar.length; i++){
+let nombreAtleta = atletasBuscar[i].name;
+nombresContenido = nombresContenido + nombreAtleta;
+}
+let nombresString = nombresContenido.s;
+console.log(nombresString[0])
