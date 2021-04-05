@@ -36,14 +36,14 @@
                 <img src="https://i1.wp.com/www.sopitas.com/wp-content/uploads/2016/08/bolt-competencia.jpg" alt="conoceDeLosAtletas"><br>
                 <button id="btn1" class="btn1">Conoce más de los atletas</button>
               </div>
-            </div>
+           </div>
             <div class="imagengif">
               <img src="imagenes/img7.gif" alt="gifmascotas">
             </div>
-            <div class="contenedorOpciones">
+           <div class="contenedorOpciones">
               <div class="imagen2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRoEnsd9Zy4qretIrvUBKA3h09IKwQJK320Q&usqp=CAU" alt="datosCuriosos"><br>
-                <button id="btn2" class="btn2">Datos Curiosos</button>
+                <img src="https://www.laprensa.hn/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=R9te9cpTUuwd0mt$EL_$tM$daE2N3K4ZzOUsqbU5sYt95gnnS6Onuz6S$$nmp2NHWCsjLu883Ygn4B49Lvm9bPe2QeMKQdVeZmXF$9l$4uCZ8QDXhaHEp3rvzXRJFdy0KqPHLoMevcTLo3h8xh70Y6N_U_CryOsw6FTOdKL_jpQ-&CONTENTTYPE=image/jpeg" alt="datosCuriosos"><br>
+                <button id="btn2" class="btn2">Medallero</button>
                 </div>
               </div>
           </section>
@@ -138,15 +138,50 @@
      </section>
     </section>
      <section id="paginaConoceMasAtletas" class="paginaConoceMasAtletas">
-     <p>Aqui van las tarjetitas</p>
-     <div class="tarjeta">
-      <div class="imagenTarjeta">
-        <img src="" alt=""><br>
+       <div class="selectBusqueda" id="selectBusqueda">
+        <div class="filtroNombre" id="filtroNombre">
+          <input type="text" id="txtAtleta" value="" placeholder="Busca tu atleta por nombre">
+        </div>
+       <div class="busqueda" id="busqueda">
+         <select  class="selectBusqueda1" id="selectBusqueda1">
+           <option value=""> -Busca por país - </option>
+           </select>
+       </div>
+       <div class="busqueda" id="busqueda">
+        <select  class="selectBusqueda2" id="selectBusqueda2">
+          <option value=""> -Busca por deporte - </option>
+          </select>
       </div>
-      <div class="descripcionTarjeta" id="descripcionTarjeta">
+      <div class="busqueda" id="busqueda">
+        <select  class="selectBusqueda3" id="selectBusqueda3">
+          <option value=""> -Busca por Género - </option>
+          </select>
       </div>
+      <div class="btnFiltros">
+        <button class="btnBuscar" id="btnBuscar">Buscar</button>
+      </div>
+      </div>
+     <div id="contenedorTarjetas" class="contenedorTarjetas" >
+
+     </div>
      </section>
-     <section id="paginaDatosCuriosos" class="paginaDatosCuriosos">
+     <section id="medallero" class="medallero">
+       <div class="tablaMedallas" id="tablaMedallas">
+         <table class="alt">
+           <thead>
+             <tr>
+               <tr>País</tr>
+               <tr>Bronce</tr>
+               <tr>Plata</tr>
+               <tr>Oro</tr>
+               <tr>Total</tr>
+             </tr>
+           </thead>
+           <tbody id="tablaDemedallas">
+
+           </tbody>
+         </table>
+       </div>
      </section>
         </main>
         <footer> 
