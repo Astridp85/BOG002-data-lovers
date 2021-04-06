@@ -3,34 +3,31 @@ import {dataAtletas} from './data.js';
 
 
 /* console.log (data.athletes);
-console.log(dataAtletas(data.athletes)); */
+console.log(dataAtletas(data.athletes)); */ 
 /* DATOS ATLETAS */ 
 
 // filtros Página Conoce más de los atletas
-const btnBuscar = document.getElementById ("btnBuscar");
-btnBuscar.addEventListener("click",function () {
-let atletaNombre = document.getElementById ("txtAtleta").value;
 
+const btnNombre = document.getElementById ('btnBuscar');
+btnNombre.addEventListener ('click', function(){
+let atletaNombre = document.getElementById('txtAtleta').value;
 
 const mostrarAtletas = dataAtletas(data.athletes,atletaNombre);
-const divAtletas = document.getElementById("contenedorTarjetas");
+
+const divAtletas = document.getElementById("contenedorTarjetas")
+divAtletas.innerHTML = '';
 
 
-mostrarAtletas.forEach(atleta => {
+
+mostrarAtletas.forEach((atleta) => {
+
   let divCardAtleta = document.createElement("div");
   divCardAtleta.className = "cardPersona";
-  
- 
 
   let divImagenAtleta = document.createElement('div');
   divImagenAtleta.className = "imagenAtleta";
 
   let img = document.createElement('img');
-  
-  divAtletas.appendChild(divCardAtleta);
-  divCardAtleta.appendChild(divImagenAtleta);
-  divImagenAtleta.appendChild(img);
-
   let randomNumber = Math.floor(Math.random() * 100);
   if (atleta.genero === 'M') {
     img.src = `https://randomuser.me/api/portraits/men/${randomNumber}.jpg`;
@@ -38,6 +35,10 @@ mostrarAtletas.forEach(atleta => {
   else {
     img.src = `https://randomuser.me/api/portraits/women/${randomNumber}.jpg`;
   }
+
+  divAtletas.appendChild(divCardAtleta);
+  divCardAtleta.appendChild(divImagenAtleta);
+  divImagenAtleta.appendChild(img);
 
   var h3 = document.createElement("h3");
   var pintarNombre = document.createTextNode(atleta.nombre);
@@ -48,9 +49,10 @@ mostrarAtletas.forEach(atleta => {
   var pintarEquipo = document.createTextNode(atleta.equipo);
   equipoH4.appendChild(pintarEquipo);
   h3.appendChild (equipoH4);
-})
-});
 
+  
+});
+});
 
 // evento menu responsive 
 let div = document.getElementById("menuToggle");
