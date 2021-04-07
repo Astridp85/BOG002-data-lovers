@@ -8,16 +8,15 @@ console.log(dataAtletas(data.athletes)); */
 
 // filtros Página Conoce más de los atletas
 
-const btnNombre = document.getElementById ('btnBuscar');
+
+const btnNombre = document.getElementById ("btnBuscar");
 btnNombre.addEventListener ('click', function(){
-let atletaNombre = document.getElementById('txtAtleta').value;
+let atletaNombre = document.getElementById("txtAtleta").value;
 
 const mostrarAtletas = dataAtletas(data.athletes,atletaNombre);
 
 const divAtletas = document.getElementById("contenedorTarjetas")
 divAtletas.innerHTML = '';
-
-
 
 mostrarAtletas.forEach((atleta) => {
 
@@ -118,9 +117,11 @@ function ocultarMostrar(pantallaEncendida, pantallaApagada) {
 let btn2= document.getElementById("btn2")
 btn2.addEventListener("click", cambioDePagina2);
 function cambioDePagina2() {
-    ocultarMostrar2("medallero","paginaPrincipal")
+    ocultarMostrar("medallero","paginaPrincipal")
 }
-function ocultarMostrar2(pantallaEncendida, pantallaApagada) {
-    document.getElementById(pantallaApagada).style.display = "none";
-    document.getElementById(pantallaEncendida).style.display = "inline";
+
+let btnAtras = document.getElementById("btnAtras")
+btnAtras.addEventListener("click", iraPaginaPrincipal);
+function iraPaginaPrincipal() {
+ ocultarMostrar("paginaPrincipal","paginaConoceMasAtletas")
 }

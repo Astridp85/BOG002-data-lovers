@@ -697,17 +697,22 @@ display: block;
     margin: 2em 1em;
 }
 /* * ===== Pagina conoce mas de los atletas ====== */
+
 .btnAtras {
-    background-color: #d80e0e;
-    height: 5%;
-    width: 5%;
-    font-size: 1em;
-    margin-left: 1em;
-    border-width: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   }
+   
+.btnAtras button {
+    background-color: rgb(43, 128, 143);
+    width: 8em;
+    height: 4em;
+    margin: 2em 2em;
     clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-    margin-top: 1em;
-    cursor: pointer;
-}
+    cursor: pointer; 
+    font-size: 1em;
+   }
 
 .paginaConoceMasAtletas {
     display: none;
