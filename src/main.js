@@ -49,17 +49,22 @@ mostrarAtletas.forEach((atleta) => {
   var pintarEquipo = document.createTextNode("Equipo: "+(atleta.equipo));
   equipoAtleta.appendChild(pintarEquipo);
   divCardAtleta.appendChild (equipoAtleta);
+
+  var edadAtleta = document.createElement("p");
+  var pintarEdad = document.createTextNode("Edad: "+ (atleta.edad));
+  edadAtleta.appendChild(pintarEdad);
+  divCardAtleta.appendChild(edadAtleta);
   
   var deporteAtleta = document.createElement("p");
   var pintarDeporte= document.createTextNode("Deporte: "+(atleta.deporte));
   deporteAtleta.appendChild(pintarDeporte);
   divCardAtleta.appendChild(deporteAtleta);
 
-  var generoAtleta = document.createElement("p");
-  var pintarGenero = document.createTextNode("Genero: "+ (atleta.genero));
-  generoAtleta.appendChild(pintarGenero);
-  divCardAtleta.appendChild(generoAtleta);
-  
+  var medallaAtleta = document.createElement("p");
+  var pintarMedalla= document.createTextNode("Medalla: "+(atleta.medalla));
+  medallaAtleta.appendChild(pintarMedalla);
+  divCardAtleta.appendChild(medallaAtleta);
+
 });
 });
 

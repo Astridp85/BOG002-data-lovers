@@ -729,7 +729,7 @@ display: block;
     background: rgb(43, 128, 143);
     margin: 1em;
     width:12em;
-    height: 18em;
+    height: 19em;
     padding: 1em 1.5em;
     border-radius: 5%;
     box-shadow: 0 2vh 1vh rgba(0, 0, 0, 0.5);
@@ -740,7 +740,7 @@ display: block;
 
 
 .cardPersona h3 {
-    margin-top: 0.2em;
+    margin-top: 0.4em;
     font-size: 100%;
     font: inherit;
     text-align: center;
@@ -796,12 +796,12 @@ display: block;
 
     @media (min-width:700px){
     .cardPersona:hover {
-        width: 15em;
-        height: 18em;
+        width: 14em;
+        height: 19em;
         border-radius: 0.5em;
         }    
     .cardPersona{
-        background: rgb(43, 128, 143);
+        background: rgb(91, 201, 182);
         margin: 1em;
         width:14em;
         height: 13em;

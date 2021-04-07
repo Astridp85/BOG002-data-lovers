@@ -18,7 +18,9 @@ const dataAtletas = (array,atletaNombre) => {
     nombre: obj.name,
     deporte: obj.sport,
     equipo: obj.team,
-    genero: obj.gender
+    genero: obj.gender,
+    medalla: obj.medal,
+    edad: obj.age
   }));
   return nuevoArray;
 };
