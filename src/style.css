@@ -697,18 +697,31 @@ display: block;
     margin: 2em 1em;
 }
 /* * ===== Pagina conoce mas de los atletas ====== */
+
 .btnAtras {
-    background-color: #d80e0e;
-    height: 5%;
-    width: 5%;
-    font-size: 1em;
-    margin-left: 1em;
-    border-width: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.btnAtras button {
+    background: #c21500;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffc500, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffc500, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 8em;
+    height: 4em;
+    margin: 3em 3em;
     clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-    margin-top: 1em;
-    cursor: pointer;
-  
-  
+    cursor: pointer; 
+    font-size: 1,8em;
+    color: honeydew;
+    margin-left: 6em;
+    border-width: 0;
+    margin-top: 0.6em;
+    position: absolute;
+     
+} 
+ .btnAtras:active {
+    transform: scale(1.10); 
 }
 .paginaConoceMasAtletas {
     display: none;
@@ -717,6 +730,7 @@ display: block;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+    position: relative;
     
 }
 .contenedorTarjetas {
@@ -755,23 +769,53 @@ display: block;
         height: 10em;
     }
     .selectBusqueda{
-        padding: 0em 0 0em;
-        margin: 2em 0 1px 2em;
+        width: 90%;
+        max-width: 75em;
+        margin: 2em 0 0.06rem 2em;
+        text-align: center;
         display: flex;
-        justify-content: baseline;
-    }
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;  
+        
+
+    } 
+    
     .busqueda{
         margin-bottom: 1em;
         font-size: 18 em;
     }
+    input, select {
+        margin-bottom: 1em;
+        padding: 1em;
+        border-radius: 3px;
+        border: 1px solid rgb(103, 190, 161);
+        cursor: pointer;
+        font-size: 00.9em;
+        color: gray;
+    }
+    .btnBuscar {
+        margin-bottom: 1em;
+        padding: 1em;
+        border-radius: 3px;
+        border: 1px solid  rgb(103, 190, 161);
+        background: rgb(83, 128, 83);
+        color: honeydew;
+        cursor: pointer;
+        font-size: 0.9em;
+    } 
+    .btnBuscar:active {
+        transform: scale(1.10); 
+    }
     
+   
     /* * ===== MEDALLERO ====== */
-    .medallero{
+    .medallero {
     display: none;
     margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-    
+    position: relative;
     }

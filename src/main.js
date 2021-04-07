@@ -104,9 +104,19 @@ function ocultarMostrar(pantallaEncendida, pantallaApagada) {
 let btn2= document.getElementById("btn2")
 btn2.addEventListener("click", cambioDePagina2);
 function cambioDePagina2() {
-    ocultarMostrar2("medallero","paginaPrincipal")
+    ocultarMostrar("medallero","paginaPrincipal")
 }
-function ocultarMostrar2(pantallaEncendida, pantallaApagada) {
-    document.getElementById(pantallaApagada).style.display = "none";
-    document.getElementById(pantallaEncendida).style.display = "inline";
+// flecha de regresar página principal desde conoce mas de los atletas
+let btnAtras = document.getElementById("btnAtras")
+btnAtras.addEventListener("click", iraPaginaPrincipal);
+function iraPaginaPrincipal() {
+ ocultarMostrar("paginaPrincipal","paginaConoceMasAtletas")
 }
+
+// flecha de regresar página principal desde medallero
+let btnAtras2 = document.getElementById("btnAtras2");
+btnAtras2.addEventListener("click", iraPaginaPrincipal);
+
+ ocultarMostrar("paginaPrincipal","medallero");
+
+
