@@ -1,5 +1,5 @@
 import data from './data/athletes/athletes.js';
-import {dataAtletas} from './data.js';
+import {dataAtletas, paisesArray} from './data.js';
 
 
 /* console.log (data.athletes);
@@ -9,16 +9,33 @@ console.log(dataAtletas(data.athletes)); */
 // filtros Página Conoce más de los atletas
 
 
+mostrarTarjetas(dataAtletas(data.athletes, ""));
+
+let mostrarPaises =  paisesArray(data.athletes)
+mostrarPaises.forEach(pais => {
+    let selectPais = document.getElementById("selectBusquedaPais")
+    let paises = document.createElement("option");
+    paises.text = pais
+    paises.value = pais
+    selectPais.appendChild(paises)
+});
+
 const btnNombre = document.getElementById ("btnBuscar");
 btnNombre.addEventListener ('click', function(){
 let atletaNombre = document.getElementById("txtAtleta").value;
+let atletaPais = document.getElementById("selectBusquedaPais").value;
 
-const mostrarAtletas = dataAtletas(data.athletes,atletaNombre);
+const filtroAtletas = dataAtletas(data.athletes,atletaNombre, atletaPais);
+mostrarTarjetas(filtroAtletas)
+});
 
-const divAtletas = document.getElementById("contenedorTarjetas")
-divAtletas.innerHTML = '';
 
-mostrarAtletas.forEach((atleta) => {
+function mostrarTarjetas(atletasArray){
+    
+ const divAtletas = document.getElementById("contenedorTarjetas")
+ divAtletas.innerHTML = '';
+
+atletasArray.forEach((atleta) => {
 
   let divCardAtleta = document.createElement("div");
   divCardAtleta.className = "cardPersona";
@@ -63,9 +80,10 @@ mostrarAtletas.forEach((atleta) => {
   var pintarMedalla= document.createTextNode("Medalla: "+(atleta.medalla));
   medallaAtleta.appendChild(pintarMedalla);
   divCardAtleta.appendChild(medallaAtleta);
+});
+}
 
-});
-});
+
 
 // evento menu responsive 
 let div = document.getElementById("menuToggle");
@@ -119,9 +137,17 @@ btn2.addEventListener("click", cambioDePagina2);
 function cambioDePagina2() {
     ocultarMostrar("medallero","paginaPrincipal")
 }
-
+// flecha de regresar página principal desde conoce mas de los atletas
 let btnAtras = document.getElementById("btnAtras")
 btnAtras.addEventListener("click", iraPaginaPrincipal);
 function iraPaginaPrincipal() {
  ocultarMostrar("paginaPrincipal","paginaConoceMasAtletas")
 }
+
+// flecha de regresar página principal desde medallero
+let btnAtras2 = document.getElementById("btnAtras2");
+btnAtras2.addEventListener("click", iraPaginaPrincipal2)
+function iraPaginaPrincipal2() {
+ ocultarMostrar("paginaPrincipal","medallero");
+}
+
