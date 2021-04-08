@@ -1,32 +1,26 @@
 import data from './data/athletes/athletes.js';
 import {dataAtletas} from './data.js';
-
-
 /* console.log (data.athletes);
 console.log(dataAtletas(data.athletes)); */ 
 /* DATOS ATLETAS */ 
-
 // filtros Página Conoce más de los atletas
+mostrarTarjetas(dataAtletas(data.athletes, "", ""));
 
-const btnNombre = document.getElementById ('btnBuscar');
+
+const btnNombre = document.getElementById ("btnBuscar");
 btnNombre.addEventListener ('click', function(){
-let atletaNombre = document.getElementById('txtAtleta').value;
-
-const mostrarAtletas = dataAtletas(data.athletes,atletaNombre);
-
-const divAtletas = document.getElementById("contenedorTarjetas")
-divAtletas.innerHTML = '';
-
-
-
-mostrarAtletas.forEach((atleta) => {
-
+let atletaNombre = document.getElementById("txtAtleta").value;
+const filtroAtletas = dataAtletas(data.athletes,atletaNombre);
+mostrarTarjetas(filtroAtletas)
+});
+function mostrarTarjetas(atletasArray){
+ const divAtletas = document.getElementById("contenedorTarjetas")
+ divAtletas.innerHTML = '';
+atletasArray.forEach((atleta) => {
   let divCardAtleta = document.createElement("div");
   divCardAtleta.className = "cardPersona";
-
   let divImagenAtleta = document.createElement('div');
   divImagenAtleta.className = "imagenAtleta";
-
   let img = document.createElement('img');
   let randomNumber = Math.floor(Math.random() * 100);
   if (atleta.genero === 'M') {
@@ -35,39 +29,31 @@ mostrarAtletas.forEach((atleta) => {
   else {
     img.src = `https://randomuser.me/api/portraits/women/${randomNumber}.jpg`;
   }
-
   divAtletas.appendChild(divCardAtleta);
   divCardAtleta.appendChild(divImagenAtleta);
   divImagenAtleta.appendChild(img);
-
   var h3 = document.createElement("h3");
   var pintarNombre = document.createTextNode(atleta.nombre);
   h3.appendChild(pintarNombre);
   divCardAtleta.appendChild(h3);
-
   var equipoAtleta = document.createElement("p");
   var pintarEquipo = document.createTextNode("Equipo: "+(atleta.equipo));
   equipoAtleta.appendChild(pintarEquipo);
   divCardAtleta.appendChild (equipoAtleta);
-
   var edadAtleta = document.createElement("p");
   var pintarEdad = document.createTextNode("Edad: "+ (atleta.edad));
   edadAtleta.appendChild(pintarEdad);
   divCardAtleta.appendChild(edadAtleta);
-  
   var deporteAtleta = document.createElement("p");
   var pintarDeporte= document.createTextNode("Deporte: "+(atleta.deporte));
   deporteAtleta.appendChild(pintarDeporte);
   divCardAtleta.appendChild(deporteAtleta);
-
   var medallaAtleta = document.createElement("p");
   var pintarMedalla= document.createTextNode("Medalla: "+(atleta.medalla));
   medallaAtleta.appendChild(pintarMedalla);
   divCardAtleta.appendChild(medallaAtleta);
-
 });
-});
-
+}
 // evento menu responsive 
 let div = document.getElementById("menuToggle");
 div.addEventListener("click", mostrar)
@@ -129,8 +115,9 @@ function iraPaginaPrincipal() {
 
 // flecha de regresar página principal desde medallero
 let btnAtras2 = document.getElementById("btnAtras2");
-btnAtras2.addEventListener("click", iraPaginaPrincipal);
+btnAtras2.addEventListener("click", iraPaginaPrincipal2);
+function iraPaginaPrincipal2() {
 
  ocultarMostrar("paginaPrincipal","medallero");
-
+}
 

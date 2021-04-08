@@ -591,7 +591,7 @@ footer .containerFullFooter{
     font-size: 1em;
     color: #141414;
     margin-top: 0.3em;
-    width: 20em;
+    width: 100%;
 }
 
 .colum2 {
@@ -697,42 +697,22 @@ display: block;
     margin: 2em 1em;
 }
 /* * ===== Pagina conoce mas de los atletas ====== */
-
 .btnAtras {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 .btnAtras button {
-    background: #c21500;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffc500, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffc500, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    width: 8em;
-    height: 4em;
-    margin: 3em 3em;
-    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-    cursor: pointer; 
-    font-size: 1,8em;
-    color: honeydew;
-    margin-left: 6em;
-    border-width: 0;
-    margin-top: 0.6em;
-    position: absolute;
-     
+  display: none;  
 } 
- .btnAtras:active {
-    transform: scale(1.10); 
-}
-
 .paginaConoceMasAtletas {
     display: none;
     margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     position: relative;
-    
 }
 .contenedorTarjetas {
     display: flex;
@@ -740,7 +720,6 @@ display: block;
     flex-direction: row;
     justify-content: center;
 }
-
 .cardPersona{
     background: rgb(43, 128, 143);
     margin: 1em;
@@ -753,8 +732,6 @@ display: block;
     overflow: hidden;
     align-items: center;    
 }
-
-
 .cardPersona h3 {
     margin-top: 0.4em;
     font-size: 100%;
@@ -764,18 +741,15 @@ display: block;
     padding-bottom: 0.5em;
     border-bottom: 1px solid white;
     }
-
 .cardPersona h3 {
     margin-bottom: 0.5em;
     font-weight: bold;
     text-align: center;
 }
-    
 .cardPersona p {
     line-height: 1em;
     text-align: center;
 }
-
 .imagenAtleta {
     width: 9em;
     height: 9em;
@@ -783,30 +757,25 @@ display: block;
     overflow: hidden;
     box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.7);
     }
-
 .imagenAtleta img {
     width: 100%;
     height: 100%;
     }
-    .selectBusqueda{
-        width: 90%;
-        max-width: 75em;
-        margin: 2em 0 0.06rem 2em;
-        text-align: center;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;  
-        
-
+.selectBusqueda{
+    max-width: 75em;
+    margin: 0.38em;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;  
     } 
-    
-    .busqueda{
-        margin-bottom: 1em;
+.busqueda{
+        margin-bottom: 0em;
         font-size: 18 em;
     }
-    input, select {
-        margin-bottom: 1em;
+.selectBusqueda input, select {
+        margin-bottom: 0.2em;
         padding: 1em;
         border-radius: 3px;
         border: 1px solid rgb(103, 190, 161);
@@ -814,21 +783,75 @@ display: block;
         font-size: 00.9em;
         color: gray;
     }
-    .btnBuscar {
-        margin-bottom: 1em;
-        padding: 1em;
-        border-radius: 3px;
-        border: 1px solid  rgb(103, 190, 161);
-        background: rgb(83, 128, 83);
-        color: honeydew;
-        cursor: pointer;
-        font-size: 0.9em;
+.btnBuscar {
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 3px;
+    border: 1px solid  rgb(103, 190, 161);
+    background: rgb(83, 128, 83);
+    color: honeydew;
+    cursor: pointer;
+    font-size: 0.9em;
     } 
-    .btnBuscar:active {
-        transform: scale(1.10); 
+.btnBuscar:active {
+    transform: scale(1.10); 
     }
-    
-   
+    /* * ===== MEDALLERO ====== */
+.medallero {
+    display: none;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+@media (min-width:700px){
+.cardPersona:hover {
+    width: 14em;
+    height: 19em;
+    border-radius: 0.5em;
+    }    
+.cardPersona{
+    background: rgb(91, 201, 182);
+    margin: 1em;
+    width:14em;
+    height: 13em;
+    padding: 1em 2.7em;
+    border-radius: 50%;
+    box-shadow: 0 2vh 1vh rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+    align-items: center;    
+    transition: width 0.4s, height 0.4s, border-radius 0.6s;
+    }
+.selectBusqueda{
+    width: 90%;
+    max-width: 75em;
+    margin: 2em 0 0.06em 0em;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;  
+    } 
+    .btnAtras button {
+        background: #C21500;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #FFC500, #C21500);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #FFC500, #C21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        width: 8em;
+        height: 4em;
+        margin: 3em 3em;
+        clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+        cursor: pointer; 
+        font-size: 1,9em;
+        color: honeydew;
+        margin-left: 6em; 
+        margin-right: 10em;
+        border-width: 0;
+        margin-top: 0em; 
+        display: inline;
+    } 
+}
     /* * ===== MEDALLERO ====== */
     .medallero {
     display: none;
@@ -838,24 +861,4 @@ display: block;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
     }
-
-    @media (min-width:700px){
-    .cardPersona:hover {
-        width: 14em;
-        height: 19em;
-        border-radius: 0.5em;
-        }    
-    .cardPersona{
-        background: rgb(91, 201, 182);
-        margin: 1em;
-        width:14em;
-        height: 13em;
-        padding: 1em 2.7em;
-        border-radius: 50%;
-        box-shadow: 0 2vh 1vh rgba(0, 0, 0, 0.5);
-        cursor: pointer;
-        overflow: hidden;
-        align-items: center;    
-        transition: width 0.4s, height 0.4s, border-radius 0.6s;
-      }
-    } 
+    
