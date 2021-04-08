@@ -4,7 +4,7 @@ import {dataAtletas} from './data.js';
 console.log(dataAtletas(data.athletes)); */ 
 /* DATOS ATLETAS */ 
 // filtros Página Conoce más de los atletas
-mostrarTarjetas(dataAtletas(data.athletes, "", ""));
+mostrarTarjetas(dataAtletas(data.athletes, "",));
 
 
 const btnNombre = document.getElementById ("btnBuscar");
