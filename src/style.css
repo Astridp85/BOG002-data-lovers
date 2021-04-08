@@ -808,10 +808,24 @@ display: block;
     font-size: 0.9em;
     } 
 
-.btnBuscar:active {
-    transform: scale(1.10); 
-    }
-    
+    .btnBuscar:active {
+        transform: scale(1.10); 
+        }
+
+.btnLimpiar button {
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 3px;
+    border: 1px solid  rgb(103, 190, 161);
+    background: rgb(83, 128, 83);
+    color: honeydew;
+    cursor: pointer;
+    font-size: 0.9em; 
+}
+   
+    .btnLimpiar:active {
+        transform: scale(1.10); 
+        }
    
     /* * ===== MEDALLERO ====== */
 .medallero {
