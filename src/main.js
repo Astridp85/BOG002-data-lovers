@@ -100,25 +100,31 @@ atletasArray.forEach((atleta) => {
   else {
     img.src = `https://randomuser.me/api/portraits/women/${randomNumber}.jpg`;
   }
+
   divAtletas.appendChild(divCardAtleta);
   divCardAtleta.appendChild(divImagenAtleta);
   divImagenAtleta.appendChild(img);
+
   var h3 = document.createElement("h3");
   var pintarNombre = document.createTextNode(atleta.nombre);
   h3.appendChild(pintarNombre);
   divCardAtleta.appendChild(h3);
+
   var equipoAtleta = document.createElement("p");
   var pintarEquipo = document.createTextNode("Equipo: "+(atleta.equipo));
   equipoAtleta.appendChild(pintarEquipo);
   divCardAtleta.appendChild (equipoAtleta);
+
   var edadAtleta = document.createElement("p");
   var pintarEdad = document.createTextNode("Edad: "+ (atleta.edad));
   edadAtleta.appendChild(pintarEdad);
   divCardAtleta.appendChild(edadAtleta);
+
   var deporteAtleta = document.createElement("p");
   var pintarDeporte= document.createTextNode("Deporte: "+(atleta.deporte));
   deporteAtleta.appendChild(pintarDeporte);
   divCardAtleta.appendChild(deporteAtleta);
+  
   var medallaAtleta = document.createElement("p");
   var pintarMedalla= document.createTextNode("Medalla: "+(atleta.medalla));
   medallaAtleta.appendChild(pintarMedalla);
