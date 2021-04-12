@@ -28,8 +28,12 @@ const filtroDeporte = (array, atletaDeporte) => {
 const deporteArray = (array) => {
   return array.map(obj =>obj.sport).filter((elemento, indice, arrayDeporte) => arrayDeporte.indexOf(elemento)==indice).sort()
 };
-const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte) => {
+
+
+const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte/* ,ordenar */) => {
  
+ 
+
   if (atletaNombre !== '') {
     array = filtroNombres (array, atletaNombre);
     }
@@ -57,45 +61,24 @@ const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte
   return nuevoArray;
 };
 
-/* const ordenarMedallas = (array, ordenar) => {
-  if (ordenar === 'asc') {
-    return array.sort ((a,b) => (a.total > b.total) ? 1 : -1);
-  }else {
-    return array.sort ((a,b) => (a.total < b.total) ? 1 : -1);
-  }
-}; */
-/* const tipoDemedalla = (array,country,medalType) => {
-  const paisArray = array.filter(atleta => atleta.equipo === country);
-  const totalMedallas = paisArray.reduce ((counter, athlete ) => {
-    const medalla = athlete.event.filter(c =>c.medal === medalType);
-    if (medalla.length > 0){
-      return counter + 1;
-    }
-    return counter;
-  }, 0);
-  return totalMedallas;
-}; */
-/* 
 
- const  medallasPais = paises.map(obj => ({
-     country: obj,
-     bronze: 0,
-     silver: 0,
-     gold: 0,
-     total: 0
-   }));
-   medallasPais.forEach(medal => {
-    medal.bronze =  tipoDemedalla (array,medal.country, 'Bronze');
-    medal.silver =  tipoDemedalla (array,medal.country, 'silver');
-    medal.gold =  tipoDemedalla (array, medal.country, 'Gold');
-    medal.total = medal.bronze + medal.silver + medal.gold;
-  });
-  if (ordenar !== '') {
-    array == ordenarMedallas (medallasPais, ordenar);
-  }
-  return medallasPais;*/
-/* };  */
 
+/* const  medallasPais = paises.map(obj => ({
+  team: obj,
+  bronze: 0,
+  silver: 0,
+  gold: 0,
+  total: 0
+}));
+
+medallasPais.forEach(medal => {
+  medal.bronze =  tipoDemedalla (array,medal.country, 'Bronze');
+  medal.silver =  tipoDemedalla (array,medal.country, 'silver');
+  medal.gold =  tipoDemedalla (array, medal.country, 'Gold');
+  medal.total = medal.bronze + medal.silver + medal.gold;
+  
+});
+ */
 
   
 

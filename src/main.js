@@ -1,5 +1,5 @@
 import data from './data/athletes/athletes.js';
-import {dataAtletas, paisesArray, generoArray, deporteArray/* paises_todos, *//* deportes_todos, dataMedallas */} from './data.js';
+import {dataAtletas, paisesArray, generoArray, deporteArray,/* todosLosPaises */} from './data.js';
 
 
 /* console.log (data.athletes);
@@ -77,8 +77,12 @@ let atletaDeporte = document.getElementById("selectBusquedaDeporte").value;
 let deporteMedallas = document.getElementById ('selectBusquedaDeporte2').value;
 let generoMedallas = document.getElementById ('selectBusquedaGenero2').value;
 let paisesMedallas = document.getElementById ('selectBusquedaPais2').value;
+/* let mostrarorden = document.getElementById ('selectBusquedaOrdenar').value; */
 
-const filtroAtletas = dataAtletas(data.athletes,atletaNombre, atletaPais, atletaGenero, atletaDeporte,deporteMedallas,generoMedallas,paisesMedallas);
+// ordenar ascendente y descendente por medallas
+
+
+const filtroAtletas = dataAtletas(data.athletes,atletaNombre, atletaPais, atletaGenero, atletaDeporte,deporteMedallas,generoMedallas,paisesMedallas,/* mostrarorden */);
 mostrarTarjetas(filtroAtletas)
 });
 
@@ -125,7 +129,20 @@ atletasArray.forEach((atleta) => {
   divCardAtleta.appendChild(medallaAtleta);
 });
 }
+/* let medallasPaises = todosLosPaises (data.athletes);
+medallasPaises.forEach((medal)=>{
+    const fila = document.createElement ('tr');
 
+    const paises = document.createElement ('td');
+    const textoPaises = document.createTextNode (medal.team);
+    paises.appendChild(textoPaises);
+    fila.appendChild(paises);
+
+    const bronce = document.createElement('td');
+    const textoBronce = document.createTextNode(medal.bonze);
+    bronce.appendChild(textoBronce);
+    fila.appendChild(bronce);
+}) */
 
 // boton refrescar 
 
