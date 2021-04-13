@@ -1,10 +1,6 @@
 import data from './data/athletes/athletes.js';
-import {dataAtletas, paisesArray, generoArray, deporteArray/* paises_todos, *//* deportes_todos, dataMedallas */} from './data.js';
+import {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla} from './data.js';
 
-
-/* console.log (data.athletes);
-console.log(dataAtletas(data.athletes)); */ 
-/* DATOS ATLETAS */ 
 
 mostrarTarjetas(dataAtletas(data.athletes, "", "", "", ""));
 
@@ -24,8 +20,6 @@ mostrarDeporte.forEach(deporte => {
   deportesMedallero.text = deporte;
   deportesMedallero.value = deporte;
   selectMedallero.appendChild(deportesMedallero);
- 
-
 });
 
 // filtro por genero 
@@ -43,9 +37,6 @@ mostrarGenero.forEach(genero => {
  generoMedallero.text = genero;
  generoMedallero.value = genero;
  selectGeneroMedal.appendChild(generoMedallero);
-
-
-
 });
 
 // filtro por pais
@@ -132,7 +123,6 @@ atletasArray.forEach((atleta) => {
 });
 }
 
-
 // boton refrescar 
 
 let btnLimpiar = document.getElementById ("btnLimpiar");
@@ -148,7 +138,6 @@ function refrescar() {
 }
 
 
-
 // evento menu responsive 
 let div = document.getElementById("menuToggle");
 div.addEventListener("click", mostrar)
@@ -158,6 +147,8 @@ function mostrar() {
     let menuOpen = document.getElementById('menuToggle');
     menuOpen.classList.toggle('menuToggleOpen'); 
 }
+
+
 // Popup suscribirse y entrar
 let abrirPopup = document.getElementById ("suscribir"),
     overLay = document.getElementById ("overLay"),
@@ -185,6 +176,8 @@ let abrirPopupEntrar = document.getElementById("entrar"),
          overLayEntrar.classList.remove('active');
          popUpEntrar.classList.remove('active');
      });
+
+
 // Desaparece y aparece la siguiente pagina conoce mas de los atletas
 let btn1= document.getElementById("btn1")
 btn1.addEventListener("click", cambioDePagina);
@@ -216,3 +209,47 @@ function iraPaginaPrincipal2() {
  ocultarMostrar("paginaPrincipal","medallero");
 }
 
+
+// tabla medallero
+
+    const trMedallas = document.getElementById("tablaDemedallas")
+    trMedallas.innerHTML = '';
+
+    var datosIngresarTabla = datosTabla (data.athletes)
+
+    datosIngresarTabla.forEach((medal) => {
+        
+     let filaPaises = document.createElement("tr") 
+
+     let columnaPaises = document.createElement("td");
+     let nombreColumna = document.createTextNode(medal.pais);
+     filaPaises.appendChild(columnaPaises);
+     columnaPaises.appendChild(nombreColumna);
+
+     let columnaOro = document.createElement("td");
+     let nombreColumnaOro = document.createTextNode(medal.oro);
+     filaPaises.appendChild(columnaOro);
+     columnaOro.appendChild(nombreColumnaOro);
+
+     let columnaPlata = document.createElement("td");
+     let nombreColumnaPlata = document.createTextNode(medal.plata);
+     filaPaises.appendChild(columnaPlata);
+     columnaPlata.appendChild(nombreColumnaPlata);
+
+     let columnaBronce = document.createElement("td");
+     let nombreColumnaBronce = document.createTextNode(medal.bronce);
+     filaPaises.appendChild(columnaBronce);
+     columnaBronce.appendChild(nombreColumnaBronce);
+
+     let columnaTotal = document.createElement("td");
+     let nombreColumnaTotal = document.createTextNode(medal.total);
+     filaPaises.appendChild(columnaTotal);
+     columnaTotal.appendChild(nombreColumnaTotal);
+
+     trMedallas.appendChild(filaPaises);
+   
+   })
+
+
+
+     
