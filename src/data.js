@@ -59,17 +59,41 @@ const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte
   return nuevoArray;
 };
 
+
+
 // filtro medallas
 
-
-const filtroMedallas = (array, disciplinaAtleta) => {
-  return array.filter(atleta =>{ atleta.team === disciplinaAtleta})
+const filtroMedallasPorDeporte = (array, deporteMedallas) => {
+  return array.filter(atleta =>{ atleta.sport === deporteMedallas})
 }
 
-const datosTabla = (array, disciplinaAtleta) => {
+const filtroMedallasPorGenero = (array, generoMedallas) => {
+  return array.filter(atleta => { atleta.gender === generoMedallas
+  })
+}
 
-if (disciplinaAtleta !== 0){
-  filtroMedallas (array, disciplinaAtleta)
+const filtroMedallasPorPais = (array, paisesMedallas) => {
+  return array.filter(atleta => { atleta.gender === paisesMedallas
+  })
+}
+
+
+
+
+
+
+const datosTabla = (array, deporteMedallas, generoMedallas, paisesMedallas) => {
+
+if (deporteMedallas !== 0){
+  filtroMedallasPorDeporte (array, deporteMedallas)
+}
+
+if (generoMedallas !== 0){
+  filtroMedallasPorGenero (array, generoMedallas)
+}
+
+if (paisesMedallas !== 0){
+  filtroMedallasPorPais (array, paisesMedallas)
 }
 
  var paisesMostrar = paisesArray(array);
@@ -81,8 +105,12 @@ if (disciplinaAtleta !== 0){
    total : 0
 
  }));
+
  return medallas;
 };
+
+
+
 
 
 
