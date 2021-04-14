@@ -1,10 +1,6 @@
 import data from './data/athletes/athletes.js';
-import {dataAtletas, paisesArray, generoArray, deporteArray,/* todosLosPaises */} from './data.js';
+import {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla} from './data.js';
 
-
-/* console.log (data.athletes);
-console.log(dataAtletas(data.athletes)); */ 
-/* DATOS ATLETAS */ 
 
 mostrarTarjetas(dataAtletas(data.athletes, "", "", "", ""));
 
@@ -24,8 +20,6 @@ mostrarDeporte.forEach(deporte => {
   deportesMedallero.text = deporte;
   deportesMedallero.value = deporte;
   selectMedallero.appendChild(deportesMedallero);
- 
-
 });
 
 // filtro por genero 
@@ -43,9 +37,6 @@ mostrarGenero.forEach(genero => {
  generoMedallero.text = genero;
  generoMedallero.value = genero;
  selectGeneroMedal.appendChild(generoMedallero);
-
-
-
 });
 
 // filtro por pais
@@ -77,9 +68,7 @@ let atletaDeporte = document.getElementById("selectBusquedaDeporte").value;
 let deporteMedallas = document.getElementById ('selectBusquedaDeporte2').value;
 let generoMedallas = document.getElementById ('selectBusquedaGenero2').value;
 let paisesMedallas = document.getElementById ('selectBusquedaPais2').value;
-/* let mostrarorden = document.getElementById ('selectBusquedaOrdenar').value; */
 
-// ordenar ascendente y descendente por medallas
 
 
 const filtroAtletas = dataAtletas(data.athletes,atletaNombre, atletaPais, atletaGenero, atletaDeporte,deporteMedallas,generoMedallas,paisesMedallas,/* mostrarorden */);
@@ -104,45 +93,37 @@ atletasArray.forEach((atleta) => {
   else {
     img.src = `https://randomuser.me/api/portraits/women/${randomNumber}.jpg`;
   }
+
   divAtletas.appendChild(divCardAtleta);
   divCardAtleta.appendChild(divImagenAtleta);
   divImagenAtleta.appendChild(img);
+
   var h3 = document.createElement("h3");
   var pintarNombre = document.createTextNode(atleta.nombre);
   h3.appendChild(pintarNombre);
   divCardAtleta.appendChild(h3);
+
   var equipoAtleta = document.createElement("p");
   var pintarEquipo = document.createTextNode("Equipo: "+(atleta.equipo));
   equipoAtleta.appendChild(pintarEquipo);
   divCardAtleta.appendChild (equipoAtleta);
+
   var edadAtleta = document.createElement("p");
   var pintarEdad = document.createTextNode("Edad: "+ (atleta.edad));
   edadAtleta.appendChild(pintarEdad);
   divCardAtleta.appendChild(edadAtleta);
+
   var deporteAtleta = document.createElement("p");
   var pintarDeporte= document.createTextNode("Deporte: "+(atleta.deporte));
   deporteAtleta.appendChild(pintarDeporte);
   divCardAtleta.appendChild(deporteAtleta);
+  
   var medallaAtleta = document.createElement("p");
   var pintarMedalla= document.createTextNode("Medalla: "+(atleta.medalla));
   medallaAtleta.appendChild(pintarMedalla);
   divCardAtleta.appendChild(medallaAtleta);
 });
 }
-/* let medallasPaises = todosLosPaises (data.athletes);
-medallasPaises.forEach((medal)=>{
-    const fila = document.createElement ('tr');
-
-    const paises = document.createElement ('td');
-    const textoPaises = document.createTextNode (medal.team);
-    paises.appendChild(textoPaises);
-    fila.appendChild(paises);
-
-    const bronce = document.createElement('td');
-    const textoBronce = document.createTextNode(medal.bonze);
-    bronce.appendChild(textoBronce);
-    fila.appendChild(bronce);
-}) */
 
 // boton refrescar 
 
@@ -159,7 +140,6 @@ function refrescar() {
 }
 
 
-
 // evento menu responsive 
 let div = document.getElementById("menuToggle");
 div.addEventListener("click", mostrar)
@@ -169,6 +149,8 @@ function mostrar() {
     let menuOpen = document.getElementById('menuToggle');
     menuOpen.classList.toggle('menuToggleOpen'); 
 }
+
+
 // Popup suscribirse y entrar
 let abrirPopup = document.getElementById ("suscribir"),
     overLay = document.getElementById ("overLay"),
@@ -196,6 +178,8 @@ let abrirPopupEntrar = document.getElementById("entrar"),
          overLayEntrar.classList.remove('active');
          popUpEntrar.classList.remove('active');
      });
+
+
 // Desaparece y aparece la siguiente pagina conoce mas de los atletas
 let btn1= document.getElementById("btn1")
 btn1.addEventListener("click", cambioDePagina);
@@ -227,3 +211,53 @@ function iraPaginaPrincipal2() {
  ocultarMostrar("paginaPrincipal","medallero");
 }
 
+
+// tabla medallero
+/* let btnBuscarmedallas = document.getElementById ('btnBuscar2');
+btnBuscarmedallas.addEventListener ('click', function(){
+    let atletaPais2 = document.getElementById("selectBusquedaPais2").value;
+    let atletaGenero2 = document.getElementById ("selectBusquedaGenero2").value;
+    let atletaDeporte2 = document.getElementById("selectBusquedaDeporte2").value;
+    let ordenarMedallas = document.getElementById ("ordenar").value */
+   
+
+    var datosIngresarTabla = datosTabla (data.athletes/* ,atletaPais2,atletaGenero2,atletaDeporte2,ordenarMedallas */);
+   /*  mostrarTarjetas(datosIngresarTabla); */
+    const trMedallas = document.getElementById("tablaDemedallas")
+    trMedallas.innerHTML = '';
+    datosIngresarTabla.forEach((medal) => {
+        
+     let filaPaises = document.createElement("tr") 
+
+     let columnaPaises = document.createElement("td");
+     let nombreColumna = document.createTextNode(medal.pais);
+     filaPaises.appendChild(columnaPaises);
+     columnaPaises.appendChild(nombreColumna);
+
+     let columnaOro = document.createElement("td");
+     let nombreColumnaOro = document.createTextNode(medal.oro);
+     filaPaises.appendChild(columnaOro);
+     columnaOro.appendChild(nombreColumnaOro);
+
+     let columnaPlata = document.createElement("td");
+     let nombreColumnaPlata = document.createTextNode(medal.plata);
+     filaPaises.appendChild(columnaPlata);
+     columnaPlata.appendChild(nombreColumnaPlata);
+
+     let columnaBronce = document.createElement("td");
+     let nombreColumnaBronce = document.createTextNode(medal.bronce);
+     filaPaises.appendChild(columnaBronce);
+     columnaBronce.appendChild(nombreColumnaBronce);
+
+     let columnaTotal = document.createElement("td");
+     let nombreColumnaTotal = document.createTextNode(medal.total);
+     filaPaises.appendChild(columnaTotal);
+     columnaTotal.appendChild(nombreColumnaTotal);
+
+     trMedallas.appendChild(filaPaises);
+    });
+   
+
+
+
+     

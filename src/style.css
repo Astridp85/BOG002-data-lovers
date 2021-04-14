@@ -845,6 +845,7 @@ display: block;
     align-items: center;    
     transition: width 0.4s, height 0.4s, border-radius 0.6s;
     }
+    
 .selectBusqueda{
     width: 90%;
     max-width: 75em;
@@ -898,3 +899,26 @@ display: block;
         font-size: 0.9em;
         } 
 } 
+
+/* // tabla  */
+
+.tablaMedallas table {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th, td {
+    width: 25%;
+    text-align: center;
+    vertical-align: baseline;
+    vertical-align: top;
+    border: 1px solid #000;
+ }
+
+
+
+
+

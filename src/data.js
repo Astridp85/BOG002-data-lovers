@@ -1,6 +1,7 @@
 
  // Filtros Pagina Conoce más de los atletas
 
+
 const filtroNombres = (array,atletaNombre) =>{
   return array.filter(atleta => atleta.name.toLowerCase().includes(atletaNombre.toLowerCase()))
 };
@@ -30,8 +31,7 @@ const deporteArray = (array) => {
 };
 
 
-const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte/* ,ordenar */) => {
- 
+const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte) => {
  
 
   if (atletaNombre !== '') {
@@ -61,6 +61,88 @@ const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte
   return nuevoArray;
 };
 
+// filtro medallas
+/* const ordenarTotal = (array, ordenar) => {
+  if (ordenar === "asc") {
+  return array.sort ((a,b) => (a.total > b.total) ? 1 : -1);
+  } else {
+    return array.sort ((a,b) => (a.total < b.total)? 1 : -1);
+  }
+}; */
+
+const filtroMedallas = (array, disciplinaAtleta) => {
+  return array.filter(atleta =>{ atleta.team === disciplinaAtleta})
+}
+/* const tipoDemedalla = (array, team, medalType) => {
+  const arrayPorpais = array.filter (atleta => atleta.team === team);
+  const totalDemedallas = arrayPorpais.reduce((counter, atleta)=>{
+    const medalla = atleta.disciplinaAtleta.filter (c => c.medalla === medalType);
+    if (medalla.length > 0){
+      return counter +1;
+    }
+    return counter; 
+  }, 0);
+  return totalDemedallas
+ 
+}; */
+
+
+const datosTabla = (array, disciplinaAtleta/* ,ordenar,medalType */) => {
+/*  if (medalType !== '') {
+   array = tipoDemedalla (array,medalType);
+ }
+
+if (ordenar !== ''){
+  array = ordenarTotal (array,ordenar);
+} */
+if (disciplinaAtleta !== 0){
+  filtroMedallas (array, disciplinaAtleta)
+}
+
+ var paisesMostrar = paisesArray(array);
+ var medallas = paisesMostrar.map(obj => ({
+   pais : obj,
+   bronce : 0,
+   plata : 0,
+   oro : 0,
+   total : 0
+ 
+  }));
+ /*  console.log (paisesMostrar); */
+  return medallas;
+  
+ };
+
+/* medallas.forEach(medal => {
+  medal.bronze =  tipoDemedalla (array,medal.team, 'Bronze');
+  medal.silver =  tipoDemedalla (array,medal.team, 'silver');
+  medal.gold =  tipoDemedalla (array, medal.team, 'Gold');
+  medal.total = medal.bronze + medal.silver + medal.gold;
+  
+});
+if (ordenar !== '') {
+  array = ordenarTotal (medallas,ordenar)
+} */
+
+
+
+
+
+// const filtroResultadosMedallas = (array =>{
+//   const newArray = [];
+//   const resultado = 0
+// array.forEach((elemento)=> {
+//   if( elemento.team === team && elemento.medal === medal) {
+//     newArray.push(elemento)
+
+//   }
+
+//   }
+// })
+// })
+
+
+
 
 
 /* const  medallasPais = paises.map(obj => ({
@@ -71,15 +153,9 @@ const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte
   total: 0
 }));
 
-medallasPais.forEach(medal => {
-  medal.bronze =  tipoDemedalla (array,medal.country, 'Bronze');
-  medal.silver =  tipoDemedalla (array,medal.country, 'silver');
-  medal.gold =  tipoDemedalla (array, medal.country, 'Gold');
-  medal.total = medal.bronze + medal.silver + medal.gold;
-  
-});
+
  */
 
   
 
-export {dataAtletas, paisesArray, generoArray, deporteArray}
+export {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla}
