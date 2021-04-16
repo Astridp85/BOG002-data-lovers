@@ -1,8 +1,8 @@
 
- // Filtros Pagina Conoce más de los atletas
+// Filtros Pagina Conoce más de los atletas
 
 
-const filtroNombres = (array,atletaNombre) =>{
+const filtroNombres = (array, atletaNombre) => {
   return array.filter(atleta => atleta.name.toLowerCase().includes(atletaNombre.toLowerCase()))
 };
 
@@ -11,45 +11,45 @@ const filtroPais = (array, atletaPais) => {
 };
 
 const paisesArray = (array) => {
-return array.map(obj => obj.team).filter((elemento, indice, arrayPais) => arrayPais.indexOf(elemento)==indice).sort()
+  return array.map(obj => obj.team).filter((elemento, indice, arrayPais) => arrayPais.indexOf(elemento) == indice).sort()
 };
 
 const filtroGenero = (array, atletaGenero) => {
-return array.filter(atleta => atleta.gender === atletaGenero)
+  return array.filter(atleta => atleta.gender === atletaGenero)
 };
 
 const generoArray = (array) => {
-  return array.map(obj => obj.gender).filter((elemento, indice, arrayGenero) => arrayGenero.indexOf(elemento)==indice)
+  return array.map(obj => obj.gender).filter((elemento, indice, arrayGenero) => arrayGenero.indexOf(elemento) == indice)
 };
 
 const filtroDeporte = (array, atletaDeporte) => {
-  return array.filter(atleta => atleta.sport === atletaDeporte )
+  return array.filter(atleta => atleta.sport === atletaDeporte)
 };
 
 const deporteArray = (array) => {
-  return array.map(obj =>obj.sport).filter((elemento, indice, arrayDeporte) => arrayDeporte.indexOf(elemento)==indice).sort()
+  return array.map(obj => obj.sport).filter((elemento, indice, arrayDeporte) => arrayDeporte.indexOf(elemento) == indice).sort()
 };
 
 
-const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte) => {
- 
+const dataAtletas = (array, atletaNombre, atletaPais, atletaGenero, atletaDeporte) => {
+
 
   if (atletaNombre !== '') {
-    array = filtroNombres (array, atletaNombre);
-    }
-   
-  if (atletaPais !==''){
-    array = filtroPais (array, atletaPais)
+    array = filtroNombres(array, atletaNombre);
   }
 
-  if (atletaGenero !=='') {
-    array = filtroGenero (array, atletaGenero )
+  if (atletaPais !== '') {
+    array = filtroPais(array, atletaPais)
   }
 
-  if (atletaDeporte !=='') {
-    array = filtroDeporte (array, atletaDeporte)
+  if (atletaGenero !== '') {
+    array = filtroGenero(array, atletaGenero)
   }
-  
+
+  if (atletaDeporte !== '') {
+    array = filtroDeporte(array, atletaDeporte)
+  }
+
   const nuevoArray = array.map(obj => ({
     nombre: obj.name,
     deporte: obj.sport,
@@ -61,68 +61,77 @@ const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte
   return nuevoArray;
 };
 
+
+
 // filtro medallas
-/* const ordenarTotal = (array, ordenar) => {
-  if (ordenar === "asc") {
-  return array.sort ((a,b) => (a.total > b.total) ? 1 : -1);
-  } else {
-    return array.sort ((a,b) => (a.total < b.total)? 1 : -1);
+
+/* const filtroMedallasPorDeporte = (arrayAtleta, deporteMedallas) => {
+  return array.filter(atleta => { atleta.sport === deporteMedallas })
+}
+
+const filtroMedallasPorGenero = (arrayAtleta, generoMedallas) => {
+  return array.filter(atleta => { */
+/*     atleta.gender === generoMedallas
+  })
+}
+
+const filtroMedallasPorPais = (arrayAtleta, paisesMedallas) => {
+  return array.filter(atleta => {
+    atleta.gender === paisesMedallas
+  })
+} */
+
+
+
+
+
+
+const datosTabla = (arrayAtletas/* , deporteMedallas, generoMedallas, paisesMedallas */) => {
+
+ /*  if (deporteMedallas !== 0) {
+    filtroMedallasPorDeporte(arrayAtletas, deporteMedallas)
+  } */
+
+ /*  if (generoMedallas !== 0) {
+    filtroMedallasPorGenero(arrayAtletas, generoMedallas)
   }
-}; */
 
-const filtroMedallas = (array, disciplinaAtleta) => {
-  return array.filter(atleta =>{ atleta.team === disciplinaAtleta})
-}
-/* const tipoDemedalla = (array, team, medalType) => {
-  const arrayPorpais = array.filter (atleta => atleta.team === team);
-  const totalDemedallas = arrayPorpais.reduce((counter, atleta)=>{
-    const medalla = atleta.disciplinaAtleta.filter (c => c.medalla === medalType);
-    if (medalla.length > 0){
-      return counter +1;
+  if (paisesMedallas !== 0) {
+    filtroMedallasPorPais(arrayAtletas, paisesMedallas)
+  } */
+  const medallero = arrayAtletas.reduce((acc, current) => {
+    if (acc.find(pais => pais.name === current.team)) {
+      let paisActual = acc.find(pais => pais.name === current.team)
+      paisActual[current.medal] ? paisActual[current.medal]++ : paisActual[current.medal] = 1;
+    } else {
+      acc.push({
+        name: current.team,
+        [current.medal]: 1
+      })
     }
-    return counter; 
-  }, 0);
-  return totalDemedallas
+    return acc
+  }, [])
+/*   console.log(medallero); */
+/*   console.log (medallero [5]); */
+
+/* medallero.forEach(pais => {
+  pais.Bronze =  medallero (arrayAtletas, pais.name,'Bronze');
+  pais.Silver =  medallero (arrayAtletas,pais.name, 'Silver');
+  pais.Gold =  medallero (arrayAtletas, pais.name, 'Gold');
+  pais.total = pais.Bronze + pais.Silver + pais.Gold;
+  console.log (medallero);
  
-}; */
+}); */
 
 
-const datosTabla = (array, disciplinaAtleta/* ,ordenar,medalType */) => {
-/*  if (medalType !== '') {
-   array = tipoDemedalla (array,medalType);
- }
 
-if (ordenar !== ''){
-  array = ordenarTotal (array,ordenar);
-} */
-if (disciplinaAtleta !== 0){
-  filtroMedallas (array, disciplinaAtleta)
-}
 
- var paisesMostrar = paisesArray(array);
- var medallas = paisesMostrar.map(obj => ({
-   pais : obj,
-   bronce : 0,
-   plata : 0,
-   oro : 0,
-   total : 0
- 
-  }));
- /*  console.log (paisesMostrar); */
-  return medallas;
-  
- };
+/* } */
+return medallero;
+}; 
 
-/* medallas.forEach(medal => {
-  medal.bronze =  tipoDemedalla (array,medal.team, 'Bronze');
-  medal.silver =  tipoDemedalla (array,medal.team, 'silver');
-  medal.gold =  tipoDemedalla (array, medal.team, 'Gold');
-  medal.total = medal.bronze + medal.silver + medal.gold;
-  
-});
-if (ordenar !== '') {
-  array = ordenarTotal (medallas,ordenar)
-} */
+
+
 
 
 
@@ -145,17 +154,8 @@ if (ordenar !== '') {
 
 
 
-/* const  medallasPais = paises.map(obj => ({
-  team: obj,
-  bronze: 0,
-  silver: 0,
-  gold: 0,
-  total: 0
-}));
 
 
- */
 
-  
 
-export {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla}
+export { dataAtletas, paisesArray, generoArray, deporteArray, datosTabla }

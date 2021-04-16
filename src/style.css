@@ -846,7 +846,7 @@ display: block;
     transition: width 0.4s, height 0.4s, border-radius 0.6s;
     }
     
-.selectBusqueda{
+.select {
     width: 90%;
     max-width: 75em;
     margin: 2em 0.5em 1em 1em;
@@ -903,19 +903,29 @@ display: block;
 /* // tabla  */
 
 .tablaMedallas table {
-    background-color: white;
+    background: #f1efe7;
     color: black;
     font-weight: bold;
     border-collapse: collapse;
-    border-spacing: 0;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-bottom: 2em;  
 }
 
-th, td {
-    width: 25%;
+th {
+    width: 20%;
     text-align: center;
     vertical-align: baseline;
     vertical-align: top;
-    border: 1px solid #000;
+    border: 1px solid #f7f7f7;
+    background: #36D9CB ;
+    padding: 1em;
+ }
+
+ td {
+    border: 1px solid #36D9CB;
+    padding: 1em;
  }
 
 

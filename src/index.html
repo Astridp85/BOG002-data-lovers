@@ -139,23 +139,23 @@
     </section>
      <section id="paginaConoceMasAtletas" class="paginaConoceMasAtletas">
       <div class="selectBusqueda" id="selectBusqueda">
-      <div class="btnAtras">
-        <button type="" class="btnAtras" id="btnAtras">Regresar</button>
+         <div class="btnAtras">
+            <button type="" class="btnAtras" id="btnAtras">Regresar</button>
       </div>
         <div class="filtroNombre" id="filtroNombre">
           <input type="text" id="txtAtleta" value="" placeholder="Busca tu atleta por nombre">
         </div>
-       <div class="busqueda" id="busqueda">
+       <div class="busqueda" id="busquedaPorPais">
          <select  class="selectBusquedaPais" id="selectBusquedaPais">
            <option value=""> -Busca por país - </option>
            </select>
        </div>
-       <div class="busqueda" id="busqueda">
+       <div class="busqueda" id="busquedaPorDeporte">
         <select  class="selectBusquedaDeporte" id="selectBusquedaDeporte">
           <option value=""> -Busca por deporte - </option>
           </select>
       </div>
-      <div class="busqueda" id="busqueda">
+      <div class="busqueda" id="busquedaPorGenero">
         <select  class="selectBusquedaGenero" id="selectBusquedaGenero">
           <option value=""> -Busca por Género - </option>
           </select>
@@ -171,39 +171,39 @@
      </div>
 
      </section>
+
      <section id="medallero" class="medallero">
-      <div class="selectBusqueda" id="selectBusqueda">
+      <div class="select" id="select-busqueda">
       <div class="btnAtras">
         <button class="btnAtras" id="btnAtras2">Regresar</button>
       </div>
-     <div class="busqueda" id="busqueda">
+     <div class="busqueda" id="busquedaPorPaisMedallero">
        <select  class="selectBusquedaPais" id="selectBusquedaPais2">
          <option value=""> -Busca por país - </option>
          </select>
      </div>
-     <div class="busqueda" id="busqueda">
+     <div class="busqueda" id="busquedaPorDeporteMedallero">
       <select  class="selectBusquedaDeporte" id="selectBusquedaDeporte2">
         <option value=""> -Busca por deporte - </option>
         </select>
     </div>
-    <div class="busqueda" id="busqueda">
+    <div class="busqueda" id="busquedaPorGeneroMedallero">
       <select  class="selectBusquedaGenero" id="selectBusquedaGenero2">
         <option value=""> -Busca por Genero - </option>
         </select>
         </div>
-        <div class="busqueda" id="busqueda">
+        <div class="busqueda" id="busquedaOrdenar">
             <select id="ordenar" class="selectBusquedaOrdenar">
               <option value="">- Ordenar por -</option>
               <option value="asc">Menor número de medallas</option>
               <option value="desc">Mayor número de medallas</option>
             </select>
           </div>
-   
     <div class="btnFiltros">
       <button class="btnBuscar" id="btnBuscar2">Buscar</button>
     </div>
     <div class="btnLimpiar">
-      <button type="" class="btnLimpiar" id="btnLimpiar">Refrescar búsqueda</button>
+      <button type="" class="btnLimpiar" id="btnLimpiarMedallero">Refrescar búsqueda</button>
    </div>
   </div>
        <div class="tablaMedallas" id="tablaMedallas">
@@ -211,9 +211,9 @@
            <thead id="primeraFila">
              <tr>
                <th>País</th>
-               <th>Bronce</th>
-               <th>Plata</th>
                <th>Oro</th>
+               <th>Plata</th>
+               <th>Bronce</th>
                <th>Total</th>
              </tr>
            </thead>
@@ -222,10 +222,10 @@
            </tbody>
          </table>
        </div>
-  
-
      </section>
         </main>
+
+        
         <footer> 
           <div class="containerFullFooter">
             <div class="container__body">
