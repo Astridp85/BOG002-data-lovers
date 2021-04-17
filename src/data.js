@@ -56,12 +56,13 @@ const dataAtletas = (array,atletaNombre, atletaPais, atletaGenero, atletaDeporte
     medalla: obj.medal,
     edad: obj.age
   }));
+
   return nuevoArray;
+
 };
 
-
-
 // filtro medallas
+
 
 const filtroMedallasPorDeporte = (array, deporteMedallas) => {
   return array.filter(atleta =>{ atleta.sport === deporteMedallas})
@@ -77,60 +78,44 @@ const filtroMedallasPorPais = (array, paisesMedallas) => {
   })
 }
 
-
-
-
-
-
 const datosTabla = (array, deporteMedallas, generoMedallas, paisesMedallas) => {
 
-if (deporteMedallas !== 0){
-  filtroMedallasPorDeporte (array, deporteMedallas)
+if (deporteMedallas !== ''){
+ array = filtroMedallasPorDeporte (array, deporteMedallas)
 }
 
-if (generoMedallas !== 0){
-  filtroMedallasPorGenero (array, generoMedallas)
+if (generoMedallas !== ''){
+  array = filtroMedallasPorGenero (array, generoMedallas)
 }
 
-if (paisesMedallas !== 0){
-  filtroMedallasPorPais (array, paisesMedallas)
+if (paisesMedallas !== ''){
+  array = filtroMedallasPorPais (array, paisesMedallas)
 }
 
- var paisesMostrar = paisesArray(array);
- var medallas = paisesMostrar.map(obj => ({
-   pais : obj,
-   bronce : 0,
-   plata : 0,
-   oro : 0,
-   total : 0
+let medallero = array.reduce((acc, current) => {
+  let paisActual = acc.find(pais => pais.name === current.team)
+  if(paisActual) { 
+   paisActual[current.medal] ? paisActual[current.medal]++ : paisActual[current.medal] = 1; 
+   } else {
+       acc.push({
+         name: current.team,
+         [current.medal]: 1   
+       })
+   }
+  return acc
+ }, [])
+ 
+ });
 
- }));
+   
 
- return medallas;
+   console.log(medallas)
+
 };
 
 
 
 
-
-
-// const filtroResultadosMedallas = (array =>{
-//   const newArray = [];
-//   const resultado = 0
-// array.forEach((elemento)=> {
-//   if( elemento.team === team && elemento.medal === medal) {
-//     newArray.push(elemento)
-
-//   }
-
-//   }
-// })
-// })
-
-
-
-
-
-  
-
 export {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla}
+
+

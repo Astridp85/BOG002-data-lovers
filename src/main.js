@@ -1,5 +1,6 @@
 import data from './data/athletes/athletes.js';
 import {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla} from './data.js';
+import athletes from './data/athletes/athletes.js';
 
 
 mostrarTarjetas(dataAtletas(data.athletes, "", "", "", ""));
@@ -65,16 +66,21 @@ let atletaPais = document.getElementById("selectBusquedaPais").value;
 let atletaGenero = document.getElementById ("selectBusquedaGenero").value;
 let atletaDeporte = document.getElementById("selectBusquedaDeporte").value;
 
-let deporteMedallas = document.getElementById ('selectBusquedaDeporte2').value;
-let generoMedallas = document.getElementById ('selectBusquedaGenero2').value;
-let paisesMedallas = document.getElementById ('selectBusquedaPais2').value;
-
 const filtroAtletas = dataAtletas(data.athletes,atletaNombre, atletaPais, atletaGenero, atletaDeporte);
 mostrarTarjetas(filtroAtletas)
-
-const filtroMedallas = datosTabla(data.athletes, deporteMedallas, generoMedallas, paisesMedallas)
-datosMedallero(filtroMedallas)
 });
+
+const btnBuscarMedallero = document.getElementById ("btnBuscar2");
+btnBuscarMedallero.addEventListener ('click', function(){
+    let deporteMedallas = document.getElementById ('selectBusquedaDeporte2').value;
+    let generoMedallas = document.getElementById ('selectBusquedaGenero2').value;
+    let paisesMedallas = document.getElementById ('selectBusquedaPais2').value;
+
+const filtroMedallas = datosTabla(data.athletes, deporteMedallas, generoMedallas, paisesMedallas);
+datosMedallero(filtroMedallas) 
+});
+
+
 
 // funcion mostrar las tarjetas en pantalla
 
@@ -128,7 +134,7 @@ atletasArray.forEach((atleta) => {
 
 // tabla medallero
     datosMedallero(datosTabla(data.athletes, "", "", ""))
-
+   
     function datosMedallero(datosIngresarTabla) {
 
     const trMedallas = document.getElementById("tablaDemedallas")
@@ -255,15 +261,14 @@ function refrescar() {
     mostrarTarjetas(dataAtletas(data.athletes, "", "", "", ""));
 }
 
-const tipoDeMedalla = (array) => {
-    let arrayMedallas = array.filter(obj => obj.medal);
-    let bronce = arrayMedallas.filter(atleta => atleta.bronze);
-    let pais = array.filter(atleta => atleta.team)
-    let totalMedalla = pais.reduce(())
-    
-    console.log(totalMedalla)
-  }
-  
+let btnLimpiarMedallero = document.getElementById ("btnLimpiarMedallero");
+btnLimpiarMedallero.addEventListener("click", refrescarMedallero);
+function refrescarMedallero() {
+    document.getElementById("selectBusquedaPais2").value = "";
+    document.getElementById ("selectBusquedaGenero2").value = "";
+    document.getElementById("selectBusquedaDeporte2").value = "";
 
- tipoDeMedalla(data.athletes)
- 
+    datosMedallero(datosTabla(data.athletes, "", "", "")); 
+}
+
+
