@@ -1,5 +1,5 @@
 import data from './data/athletes/athletes.js';
-import {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla} from './data.js';
+import {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla, medallasDeportesArray} from './data.js';
 
 
 mostrarTarjetas(dataAtletas(data.athletes, "", "", "", ""));
@@ -14,12 +14,6 @@ mostrarDeporte.forEach(deporte => {
   deportes.text = deporte;
   deportes.value = deporte;
   selectDeporte.appendChild(deportes);
-
-  let selectMedallero = document.getElementById ('selectBusquedaDeporte2');
-  let deportesMedallero = document.createElement('option');
-  deportesMedallero.text = deporte;
-  deportesMedallero.value = deporte;
-  selectMedallero.appendChild(deportesMedallero);
 });
 
 // filtro por genero 
@@ -49,11 +43,6 @@ mostrarPaises.forEach(pais => {
     paises.value = pais;
     selectPais.appendChild(paises);
 
-    let selectPaisMedal = document.getElementById ('selectBusquedaPais2');
-    let paisesMedallero = document.createElement ('option');
-    paisesMedallero.text = pais;
-    paisesMedallero.value = pais;
-    selectPaisMedal.appendChild(paisesMedallero);
 });
 
 // filtro por nombre
@@ -65,16 +54,12 @@ let atletaPais = document.getElementById("selectBusquedaPais").value;
 let atletaGenero = document.getElementById ("selectBusquedaGenero").value;
 let atletaDeporte = document.getElementById("selectBusquedaDeporte").value;
 
-let deporteMedallas = document.getElementById ('selectBusquedaDeporte2').value;
-let generoMedallas = document.getElementById ('selectBusquedaGenero2').value;
-let paisesMedallas = document.getElementById ('selectBusquedaPais2').value;
+
 
 const filtroAtletas = dataAtletas(data.athletes,atletaNombre, atletaPais, atletaGenero, atletaDeporte);
 mostrarTarjetas(filtroAtletas)
-
-const filtroMedallas = datosTabla(data.athletes, deporteMedallas, generoMedallas, paisesMedallas)
-datosMedallero(filtroMedallas)
 });
+
 
 // funcion mostrar las tarjetas en pantalla
 
@@ -129,9 +114,28 @@ atletasArray.forEach((atleta) => {
 // tabla medallero
 
     datosMedallero(datosTabla(data.athletes, "", "", ""))
+    
+    let mostrarMedallasdeportes =  medallasDeportesArray(data.athletes);
+    mostrarMedallasdeportes.forEach(medallasDeporte => {
+    let selectdeporteMedal = document.getElementById ('selectBusquedaDeporte2');
+    let deportesMedallero = document.createElement ('option');
+    deportesMedallero.text = medallasDeporte;
+    deportesMedallero.value = medallasDeporte;
+    selectdeporteMedal.appendChild(deportesMedallero);
+});
+// ordenar ascendente por total de medallas
+const btnBuscarMedallero = document.getElementById ("btnBuscar2");
+btnBuscarMedallero.addEventListener ('click', function(){
+let ordenarMedallas = document.getElementById ('selectBusquedaOrdenar').value;
+let deporteMedallas = document.getElementById ('selectBusquedaDeporte2').value;
+let generoMedallas = document.getElementById ('selectBusquedaGenero2').value;
+let paisesMedallas = document.getElementById ('selectBusquedaPais2').value;
+const filtroMedallas = datosTabla(data.athletes, deporteMedallas, generoMedallas, paisesMedallas,ordenarMedallas)
+datosMedallero(filtroMedallas)
+});
 
     function datosMedallero(datosIngresarTabla) {
-  console.log (datosIngresarTabla);
+ /*  console.log (datosIngresarTabla); */
     const trMedallas = document.getElementById("tablaDemedallas")
     trMedallas.innerHTML = '';
 
@@ -148,7 +152,7 @@ atletasArray.forEach((atleta) => {
      let cero = document.createTextNode ("0");
      let bronce = pais.Bronze;
      let plata = pais.Silver;
-     let oro = pais.Gold;
+     let oro = (pais.Gold);
      let columnaOro = document.createElement("td");
      let nombreColumnaOro = document.createTextNode(oro);
      filaPaises.appendChild(columnaOro);
@@ -168,7 +172,7 @@ atletasArray.forEach((atleta) => {
      columnaBronce.appendChild(bronce === undefined ? cero : nombreColumnaBronce);
      
 
-     let medalTotal =  bronce + plata + oro;
+     let medalTotal = (bronce === undefined ? 0 : bronce) + (plata === undefined ? 0 : plata) + (oro === undefined ? 0 : oro)
      let columnaTotal = document.createElement("td");
      let nombreColumnaTotal = document.createTextNode(medalTotal);
      filaPaises.appendChild(columnaTotal);
@@ -258,16 +262,21 @@ function iraPaginaPrincipal2() {
 // boton refrescar 
 
 let btnLimpiar = document.getElementById ("btnLimpiar");
-/* let btnLimpiar2 = document.getElementById ("btnLimpiarMedallero");
-btnLimpiar2.addEventListener ("click",refrescar); */
+let btnLimpiar2 = document.getElementById ("btnLimpiarMedallero");
+btnLimpiar2.addEventListener ("click",refrescar);
 btnLimpiar.addEventListener("click", refrescar);
 function refrescar() {
     document.getElementById("txtAtleta").value = "";
     document.getElementById("selectBusquedaPais").value = "";
     document.getElementById ("selectBusquedaGenero").value = "";
     document.getElementById("selectBusquedaDeporte").value = "";
+    document.getElementById ('selectBusquedaOrdenar').value = '';
+    document.getElementById ('selectBusquedaDeporte2').value = '';
+    document.getElementById ('selectBusquedaGenero2').value = '';
+    document.getElementById ('selectBusquedaPais2').value = '';
 
-    mostrarTarjetas(dataAtletas(data.athletes, "", "", "", ""));
+    mostrarTarjetas(dataAtletas(data.athletes, "", "", "", "", ''));
+    datosMedallero(datosTabla(data.athletes, "", "", "",''));
 }
 
 

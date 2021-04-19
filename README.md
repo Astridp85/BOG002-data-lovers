@@ -1,209 +1,205 @@
-# Data Lovers
+# Data Lovers - Olympics Data
 
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Consideraciones técnicas](#7-consideraciones-técnicas)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Checklist](#9-checklist)
+* [3. Definición del producto](#3-definición-del-producto)
+* [4. Historias de usarios](#4-historias-usuarios)
+* [5. Diseño de la interfaz de Usuario](#5-diseño-de-la-interfaz-de-usuario)
+* [6. Objetivos de aprendizajes](#6-objetivo-de-aprendizaje)
+* [7. Checklist](#7-checklist)
 
-***
 
 ## 1. Preámbulo
 
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
-precedentes.
-
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
-
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por el usuario
-al lado derecho.
-
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
+Este proyecto es el desarrollo de una página web que nos permitirá visualizar una serie de datos olímpicos de Rio 2016, pensando en la información que puede llegar a ser relevante para cada usuario que quiera conocer más acerca de los atletas que compitieron durante esa temporada. 
 
 ## 2. Resumen del proyecto
 
-En este proyecto **construirás una _página web_ para visualizar un
-_conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
-necesita.
+Olympics Data es un proyecto pensado en mostrar los datos relevantes de cada atleta durante los juegos olimpicos de Rio 2016. Ha sido un proyecto desarrollado en dupla y cuya duración ha sido de 5 sprint (5 semanas).
+Durante este tiempo se trabajó minuciosamente la planificación y se llevó a cabo una serie de historias de usuario, especificando la experiencia de cada usuario al navegar en la interfaz, para ellos se diseñó pensando en la cómodidad del usuario, se realizaron los test de usabilidad para poder llegar a la meta propuesta, a través de prototipos de baja y alta fidelidad.
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Con cálculo agregado
-nos referimos a distintos cálculos que puedes hacer con la data para mostrar
-información aún más relevante para los usuarios (promedio, el valor máximo
-o mínimo, etc).
+## 3. Definicion del Producto
+Olympics Data es una web diseñada para usuarios que muestran interés en estadísticas y datos reevantes acerca de los atletas de las olimpiadas celebradas en Rio de Janeiro 2016.
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
+Cuenta con dos secciones importantes:
+1. Conoce mas de los atletas: en donde se puede visualizar la imagen de cada atleta, su nombre, deporte, equipo, medalla, edad y género.
+2. Medallero: una sección donde se puede visualizar cada una de las medallas, diferenciando por su tipo (oro,plata y bronce), así como la totalidad de medallas por países.
 
-Una vez que definas tu área de interés, buscar entender quién es tu usuario
-y qué necesita saber o ver exactamente; luego podrás construir la interfaz que
-le ayude a interactuar y entender mejor esos datos.
+Adicionalmente hay una sección en la página principal en la cual se puede conocer un poco más acerca de la historia  de los juegos olimpicos en Rio 2016, así como una serie de imágenes relevantes de esta temporada de las olimpiadas en América Latina.
 
-Estos son datos que te proponemos:
+## 4. Historias de Usuarios.
 
-* [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 251 Pokémon de la región de Kanto
-  y Johto, junto con sus respectivas estadísticas usadas en el juego
-  [Pokémon GO](http://pokemongolive.com).
-  - [Investigación con jugadores de Pokémon Go](src/data/pokemon/README.md)
+* Historia #1: 
+El Usuario interesado en conocer acerca de los ultimos juegos olimpicos Brasil 2016, ingresa a nuestra pagina web donde puede seleccionar por categoria lo que le interesa conocer acerca de los juegos.
+Categorias desplegadas:
+- Conoce más de los atletas
+- Medallero
+Asi mismo cuenta con una reseña historica acerca de los juegos olimpicos en Rio de janeiro y las victorias mas impotantes de este pais en distintos juegos, asi mismo cuenta con un carrusel con las imagenes mas destacadas de Rio 2016.
 
-* [League of Legends - Challenger leaderboard](src/data/lol/lol.json):
-  Este set de datos muestra la lista de campeones en una liga del
-  juego League of Legends (LoL).
-  - [Investigación con jugadores de LoL](src/data/lol/README.md)
+Adicionalmente, justo cuando el usuario tenga 2 minutos de visita en la pagina se desplegara un pop up para invitarlo a suscribirse en nuestra pagina.
 
-* [Rick and Morty](src/data/rickandmorty/rickandmorty.json).
-  Este set nos proporciona la lista de los personajes de la serie Rick and
-  Morty. [API Rick and Morty](https://rickandmortyapi.com).
-  - [Investigación con seguidores de Rick and Morty](src/data/rickandmorty/README.md)
+Yo como _usuario_ **quiero** ver una página con información acerca de los juegos olimpicos Rio 2016, **para** conocer datos básicos (información de los atletas, historia de los juegos olimpicos durante está temporada, ver imágenes populares y tener la opción de suscribirme).
 
-* [Juegos Olímpicos de Río de Janeiro](src/data/athletes/athletes.json).
-  Este set nos proporciona la lista de los atletas que ganaron medallas en las
-  olímpiadas de Río de Janeiro.
-  - [Investigación con interesados en juegos olímpicos de Río de Janeiro](/src/data/athletes/README.md)
+### Criterios de Aceptación
+- Hay un interfaz de presentación de la tematica deportiva.
+- Hay una intefaz con diferentes opciones de búsqueda de acuerdo a la categoría preferida.
+- Hay una breve historia para conecer mas acerca del pais anfitrion.
+- Hay un carrusel con imagenes destacadas en rio 2016.
+- Hay una opcion de suscripcion.
+- Hay links para visitar nuestras redes sociales.
 
-## 3. Objetivos de aprendizaje
+### Definicion de Terminado 
+- El usuario se encuentra con una interfaz responsive.
+- Se pasan los test usabilidad.
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
+* Historia #2:
+Nuestro usuario tiene la opción de seleccionar el primer filtro (Conoce mas por atleta)
+El usuario a traves de un click abre una nueva pantalla donde se despliega la siguiente información:
+-Foto, nombre, deporte, equipo, edad, medalla y género
+-Se filtraran por nombre
+-Se filtraran por deporte
+-Se filtraran por país
+- Se filtraran por género
+Yo como _usuario_ **quiero** ver una página con información acerca de los atletas, **para** conocer datos básicos acerca de ellos ( nombre, género, deporte, medallas, país y edad), así como la posibilidad de poder filtrarlos pos deporte, país, género y nombre del atleta.
+
+### Criterios de Aceptación
+- Hay una interfaz que muestra a los distintos atletas (Foto, nombre, edad, pais y medalla)
+
+### Definicion de Terminado
+- Intefaz responsive.
+- El usuario tiene distintas maneras de filtrar los datos relevantes de los atletas.
+
+* Historia #3:
+Nuestro usuario tiene la opción de seleccionar el primer filtro (Conoce mas por atleta)
+El usuario a través de un click abre una nueva pantalla donde se despliega la siguiente información:
+- Una foto alusiva a los juegos olímpicos
+- Esa misma tarjeta con la foto al colocar el mouse sobre la tarjeta se abrirá y encontrará información acerca de los atletas (nombre, equipo, medalla, sexo, edad).
+Yo como _usuario_ **quiero** ver una página con fotos de todos los atletas ganadores de medallas durante la temporada de Rio 2016 de los juegos olimpicos, **para** conocer datos básicos acerca de ellos( nombre, género, deporte, medallas, país y edad)
+
+### Criterios de Aceptación
+- Hay una sección para mostrar información importante acerca de los atletas.
+
+### Definicion de Terminado
+- La página es responsive.
+- Se logra ver la información de los atletas.
+
+* Historia #4:
+El usuario desea a través de filtros buscar por nombre, país, género y deporte.
+El usuario desea ver el numero de medallas por país.
+
+Yo como _usuario_ **quiero** buscar a los atletas por nombre, país, género y deporte, así como conocer los tipos de medallas que cada país ha ganado **para** poder estar informado acerca de los países que son mas ganadores de medallas.
+
+### Criterios de Aceptación
+- Se tienen 4 filtros (Nombre, país, genero, deporte).
+- Se despliegan país, genero y deporte de los select.
+- En el filtro nombre se ingresa el nombre del atleta o letra relacionada y se muestran las coincidencias.
+- Se le permite al usuario volver a la pagina principal.
+- el usuario puede acceder a la opción medallero para conocer las medallas por país.
+- En una tabla aparecen totalizadas las medallas por país.
+- Se le permite al usuario volver del medallero a las pagina principal.
+### Definicion de Terminado
+- La pagina es responsive.
+- Los filtros se aplican correctamente.
+- Los botones permiten regresar a la pagina principal.
+- Aparecen totalizadas el numero de medallas por país.
+- El cada tarjeta se visualiza la información de cada atleta (Equipo, nombre, genero, país, disciplina).
+
+## 5. Diseño de la interfaz de Usuario
+Para la planificación de a interfaz se procedió a realizar un prototipo de baja y de alta fidelidad.
+
+### Prototipo de Baja Fidelidad
+
+Se muestran prototipos de baja fidelidad, con el cual se realizaron pruebas de usabilidad y al recibir el feedback de los mismos, se mejoraron los bocetos para corregir todos esos errores.
+* Primera Iteración:
+![Sin título](src/imagenes/prototipobajafidelidad1.png)
+![Sin título](src/imagenes/prototipobajafidelidad2.png)
+* Segunda Iteración:
+![Sin título](src/imagenes/prototipobajafidelidad3.png)
+![Sin título](src/imagenes/prototipobajafidelidad4.jpeg)
+
+
+### Prototipo de Alta Fidelidad
+A continuacion los prototipos de alta fidelidad realizados con la herramienta **Figma** donde se aplicaron los principios de diseño visual para nuestra propuesta final.
+
+![Sin título](src/imagenes/prototipoaltafidelidad1.png)
+![Sin título](src/imagenes/prototipoaltafidelidad2.png)
+![Sin título](src/imagenes/prototipoaltafidelidad3.png)
+
+## 6. Objetivos de aprendizaje
+
+El objetivo principal de este proyecto es aprender a diseñar y construir una interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el usuario necesita.
 
 ### HTML y CSS
 
-* [ ] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-* [ ] Uso de selectores de CSS.
-* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
-* [ ] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [X] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+* [X] Uso de selectores de CSS.
+* [X] Construir tu aplicación respetando el diseño realizado (maquetación).
+* [X] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### DOM y Web APIs
 
-* [ ] Uso de selectores del DOM.
-* [ ] Manejo de eventos del DOM.
-* [ ] [Manipulación dinámica del DOM.](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
+* [X] Uso de selectores del DOM.
+* [X] Manejo de eventos del DOM.
+* [X] [Manipulación dinámica del DOM.](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
 (appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 
 ### JavaScript
 
-* [ ] Uso de condicionales (if-else | switch | operador ternario)
-* [ ] Uso de bucles (for | for..in | for..of | while)
-* [ ] Uso de funciones (parámetros | argumentos | valor de retorno)
-* [ ] Manipular arrays (filter | map | sort | reduce)
-* [ ] Manipular objects (key | value)
-* [ ] Uso ES modules ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-| [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
-* [ ] Diferenciar entre expression y statements.
-* [ ] Diferenciar entre tipos de datos primitivos y no primitivos.
+* [X] Uso de condicionales (if-else | switch | operador ternario)
+* [X] Uso de bucles (for | for..in | for..of | while)
+* [X] Uso de funciones (parámetros | argumentos | valor de retorno)
+* [X] Manipular arrays (filter | map | sort | reduce)
+* [X] Manipular objects (key | value)
+* [X] Uso ES modules ([`import`]|[`export`]
+* [X] Diferenciar entre expression y statements.
+* [X] Diferenciar entre tipos de datos primitivos y no primitivos.
 
 ### Testing
 
-* [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
+* [X] [Testeo unitario.]
 
 ### Estructura del código y guía de estilo
 
-* [ ] Organizar y dividir el código en módulos (Modularización)
-* [ ] Uso de identificadores descriptivos (Nomenclatura | Semántica)
-* [ ] Uso de linter (ESLINT)
+* [X] Organizar y dividir el código en módulos (Modularización)
+* [X] Uso de identificadores descriptivos (Nomenclatura | Semántica)
+* [X] Uso de linter (ESLINT)
 
 ### Git y GitHub
 
-* [ ] Uso de comandos de git (add | commit | pull | status | push)
-* [ ] Manejo de repositorios de GitHub (clone | fork | gh-pages)
+* [X] Uso de comandos de git (add | commit | pull | status | push)
+* [X] Manejo de repositorios de GitHub (clone | fork | gh-pages)
 * [ ] Colaboración en Github (branches | pull requests | |tags)
 
 ### UX
 
-* [ ] Diseñar la aplicación pensando y entendiendo al usuario.
-* [ ] Crear prototipos para obtener feedback e iterar.
-* [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
-* [ ] Planear y ejecutar tests de usabilidad.
+* [X] Diseñar la aplicación pensando y entendiendo al usuario.
+* [X] Crear prototipos para obtener feedback e iterar.
+* [X] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
+* [X] Planear y ejecutar tests de usabilidad.
 
-## 4. Consideraciones generales
+## 7. Checklist
 
-* Este proyecto se debe resolver en duplas.
-* El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-  interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-* Tiempo para completarlo: Toma como referencia 4 semanas.
-
-## 5. Criterios de aceptación mínimos del proyecto
-
-Los criterios para considerar que has completado este proyecto son:
-
-### Definición del producto
-
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
-
-### Historias de usuario
-
-Una vez que entiendas las necesidades de tus usuarios, escribe las [Historias
-de Usuario](https://es.wikipedia.org/wiki/Historias_de_usuario) que representen
-todo lo que el usuario necesita hacer/ver. Las **Historias de Usuario** deben
-ser el resultado de tu proceso de investigación o _research_ de tus usuarios.
-
-Asegúrate de incluir la definición de terminado (_definition of done_) y los
-Criterios de Aceptación para cada una.
-
-En la medida de lo posible, termina una historia de usuario antes de pasar
-a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
-
-### Diseño de la Interfaz de Usuario
-
-#### Prototipo de baja fidelidad
-
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
-
-#### Prototipo de alta fidelidad
-
-Lo siguiente es diseñar tu Interfaz de Usuario (UI por sus siglas en inglés -
-_User Interface_). Para eso debes aprender a utilizar alguna herramienta de
-diseño visual. Nosotros te recomendamos [Figma](https://www.figma.com/) que es
-una herramienta que funciona en el navegador y, además, puedes crear una cuenta
-gratis. Sin embargo, eres libre de utilizar otros editores gráficos como
-Illustrator, Photoshop, PowerPoint, Keynote, etc.
-
-El diseño debe representar el _ideal_ de tu solución. Digamos que es lo que
-desearías implementar si tuvieras tiempo ilimitado para trabajar. Además, tu
-diseño debe seguir los fundamentos de _visual design_.
-
-#### Testeos de usabilidad
-
-Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
-en base a los resultados, deberás iterar tus diseños. Cuéntanos
-qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
-
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
-
-Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
-**No** es necesario que construyas la interfaz exactamente como la diseñaste.
-Tu tiempo de hacking es escaso, así que deberás priorizar
-
-Como mínimo, tu implementación debe:
-
-1. Mostrar la data en una interfaz: puede ser un card, una tabla, una lista,
-   etc.
-2. Permitir al usuario interactuar para obtener la infomación que necesita.
-3. Ser _responsive_, es decir, debe visualizarse sin problemas desde distintos
-   tamaños de pantallas: móviles, tablets y desktops.
-4. Que la interfaz siga los fundamentos de _visual design_.
+* [X] Usa VanillaJS.
+* [X] No hace uso de `this`.
+* [X] Pasa linter (`npm run pretest`)
+* [X] Pasa tests (`npm test`)
+* [X] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+  lines y branches.
+* [X] Incluye _Definición del producto_ clara e informativa en `README.md`.
+* [X] Incluye historias de usuario en `README.md`.
+* [X] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+  `README.md`.
+* [X] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+  en `README.md`.
+* [X] Incluye link a Zeplin en `README.md`.
+* [X] Incluye el listado de problemas que detectaste a través de tests de
+  usabilidad en el `README.md`.
+* [X] UI: Muestra lista y/o tabla con datos y/o indicadores.
+* [] UI: Permite ordenar data por uno o más campos (asc y desc).
+* [X] UI: Permite filtrar data en base a una condición.
+* [X] UI: Es _responsive_.
 
 ### Pruebas unitarias
 
@@ -443,24 +439,3 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 * [Cómo dividir H.U.](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s)
 * [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
 
-## 9. Checklist
-
-* [ ] Usa VanillaJS.
-* [ ] No hace uso de `this`.
-* [ ] Pasa linter (`npm run pretest`)
-* [ ] Pasa tests (`npm test`)
-* [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
-  lines y branches.
-* [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-* [ ] Incluye historias de usuario en `README.md`.
-* [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
-  `README.md`.
-* [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-  en `README.md`.
-* [ ] Incluye link a Zeplin en `README.md`.
-* [ ] Incluye el listado de problemas que detectaste a través de tests de
-  usabilidad en el `README.md`.
-* [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-* [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-* [ ] UI: Permite filtrar data en base a una condición.
-* [ ] UI: Es _responsive_.
