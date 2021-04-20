@@ -127,13 +127,19 @@ A continuacion los prototipos de alta fidelidad realizados con la herramienta **
 ![Sin título](src/imagenes/prototipoaltafidelidad2.png)
 ![Sin título](src/imagenes/prototipoaltafidelidad3.png)
 
+### Prototipo Final 
+![Sin título](src/imagenes/Prototipofinal1.jpeg)
+![Sin título](src/imagenes/Prototipofinal2.png)
+![Sin título](src/imagenes/Prototipofinal3.png)
+
+
 ## 6. Objetivos de aprendizaje
 
 El objetivo principal de este proyecto es aprender a diseñar y construir una interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el usuario necesita.
 
 ### HTML y CSS
 
-* [X] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+* [X] [Uso de HTML semántico.]
 * [X] Uso de selectores de CSS.
 * [X] Construir tu aplicación respetando el diseño realizado (maquetación).
 * [X] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
