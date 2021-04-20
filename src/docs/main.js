@@ -1,4 +1,4 @@
-import data from './data/athletes/athletes.js';
+import data from './athletes.js';
 import {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla} from './data.js';
 
 
