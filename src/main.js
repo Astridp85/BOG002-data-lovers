@@ -1,6 +1,5 @@
 import data from './data/athletes/athletes.js';
 import {dataAtletas, paisesArray, generoArray, deporteArray, datosTabla} from './data.js';
-import athletes from './data/athletes/athletes.js';
 
 
 mostrarTarjetas(dataAtletas(data.athletes, "", "", "", ""));
@@ -72,12 +71,13 @@ mostrarTarjetas(filtroAtletas)
 
 const btnBuscarMedallero = document.getElementById ("btnBuscar2");
 btnBuscarMedallero.addEventListener ('click', function(){
-    let deporteMedallas = document.getElementById ('selectBusquedaDeporte2').value;
-    let generoMedallas = document.getElementById ('selectBusquedaGenero2').value;
-    let paisesMedallas = document.getElementById ('selectBusquedaPais2').value;
+    // let deporteMedallas = document.getElementById ('selectBusquedaDeporte2').value;
+    // let generoMedallas = document.getElementById ('selectBusquedaGenero2').value;
+    // let paisesMedallas = document.getElementById ('selectBusquedaPais2').value;
 
-const filtroMedallas = datosTabla(data.athletes, deporteMedallas, generoMedallas, paisesMedallas);
-datosMedallero(filtroMedallas) 
+const agregarFiltroDeporte = datosTabla(data.athletes)
+datosMedallero(agregarFiltroDeporte) 
+
 });
 
 
@@ -133,41 +133,53 @@ atletasArray.forEach((atleta) => {
 }
 
 // tabla medallero
-    datosMedallero(datosTabla(data.athletes, "", "", ""))
-   
-    function datosMedallero(datosIngresarTabla) {
 
+
+
+    datosMedallero(datosTabla(data.athletes))
+
+    function datosMedallero(datosIngresarTabla) {
+   
     const trMedallas = document.getElementById("tablaDemedallas")
     trMedallas.innerHTML = '';
 
-    datosIngresarTabla.forEach((medal) => {
+    datosIngresarTabla.forEach((pais) => {
         
      let filaPaises = document.createElement("tr") 
 
      let columnaPaises = document.createElement("td");
-     let nombreColumna = document.createTextNode(medal.pais);
+     let nombreColumna = document.createTextNode(pais.name);
      filaPaises.appendChild(columnaPaises);
      columnaPaises.appendChild(nombreColumna);
+     
+     let bronce = pais.Bronze;
+     let ceroBronce = document.createTextNode("0")
+     let plata = pais.Silver;
+     let ceroPlata = document.createTextNode("0")
+     let oro = pais.Gold;
+     let ceroOro = document.createTextNode("0")
 
      let columnaOro = document.createElement("td");
-     let nombreColumnaOro = document.createTextNode(medal.oro);
+     let nombreColumnaOro = document.createTextNode(oro);
      filaPaises.appendChild(columnaOro);
-     columnaOro.appendChild(nombreColumnaOro);
+     columnaOro.appendChild (oro == undefined ? ceroOro : nombreColumnaOro);
 
      let columnaPlata = document.createElement("td");
-     let nombreColumnaPlata = document.createTextNode(medal.plata);
+     let nombreColumnaPlata = document.createTextNode(plata);
      filaPaises.appendChild(columnaPlata);
-     columnaPlata.appendChild(nombreColumnaPlata);
+     columnaPlata.appendChild(plata == undefined ? ceroPlata: nombreColumnaPlata)
 
      let columnaBronce = document.createElement("td");
-     let nombreColumnaBronce = document.createTextNode(medal.bronce);
+     let nombreColumnaBronce = document.createTextNode(bronce);
      filaPaises.appendChild(columnaBronce);
-     columnaBronce.appendChild(nombreColumnaBronce);
-
+     columnaBronce.appendChild(bronce == undefined ? ceroBronce : nombreColumnaBronce);
+     
+     let medalTotal = (bronce === undefined ? 0 : bronce) + (plata === undefined ? 0 : plata) + (oro === undefined ? 0 : oro)
      let columnaTotal = document.createElement("td");
-     let nombreColumnaTotal = document.createTextNode(medal.total);
+     let nombreColumnaTotal = document.createTextNode(medalTotal);
      filaPaises.appendChild(columnaTotal);
      columnaTotal.appendChild(nombreColumnaTotal);
+     
 
      trMedallas.appendChild(filaPaises);
    
@@ -268,7 +280,7 @@ function refrescarMedallero() {
     document.getElementById ("selectBusquedaGenero2").value = "";
     document.getElementById("selectBusquedaDeporte2").value = "";
 
-    datosMedallero(datosTabla(data.athletes, "", "", "")); 
+    datosMedallero(datosTabla(data.athletes)); 
 }
 
 
